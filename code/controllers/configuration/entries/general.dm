@@ -106,6 +106,9 @@
 /// log voting
 /datum/config_entry/flag/log_vote
 
+/// log manual zone switching
+/datum/config_entry/flag/log_zone_switch
+
 /// log client whisper
 /datum/config_entry/flag/log_whisper
 
@@ -472,6 +475,15 @@
 	return value
 
 /datum/config_entry/flag/preference_map_voting
+
+/// Allows players to export their own preferences as a JSON file. Left as a config toggle in case it needs to be turned off due to server-specific needs.
+/datum/config_entry/flag/forbid_preferences_export
+	default = FALSE
+
+/// The number of seconds a player must wait between preference export attempts.
+/datum/config_entry/number/seconds_cooldown_for_preferences_export
+	default = 10
+	min_val = 1
 
 /datum/config_entry/number/client_warn_version
 	default = null
