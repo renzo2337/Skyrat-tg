@@ -244,4 +244,12 @@ define_sanity_output.txt
 /db/
 /config/ezdb.txt
 
-/config/*
+/config/config.txt
+/config/dbconfig.txt
+/config/game_options.txt
+/config/admins.txt
+/config/skyrat/dbconfig.txt
+/config/skyrat/mentors.txt
+/config/skyrat/skyrat_config.txt
+/config/skyrat/veteran_players.txt
+/config/skyrat/donators.txt
