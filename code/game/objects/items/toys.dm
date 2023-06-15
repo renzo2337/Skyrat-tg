@@ -1629,17 +1629,3 @@ GLOBAL_LIST_EMPTY(intento_players)
 #undef TIME_TO_BEGIN
 #undef TIME_PER_DEMO_STEP
 #undef TIME_TO_RESET_ICON
-
-//Los Tipos
-
-/obj/item/toy/figure/Mysha
-	name = "\improper Figura de acción de Mysha"
-	icon_state = "mysha"
-	toysay = "Squeak!"
-	toysound = 'sound/effects/mousesqueek.ogg'
-
-/obj/item/toy/figure/Jade
-	name = "\improper Figura de acción de Jade"
-	icon_state = "jade"
-	toysay = "Touch me again and i'll kill you"
-	toysound = 'sound/effects/jade_sound.ogg'
