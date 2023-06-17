@@ -13,6 +13,13 @@ datum/supply_pack/costumes_toys/tipos
 		/obj/item/toy/figure/tipos/audyr = 1,
 		/obj/item/toy/figure/tipos/nalkah = 1,
 		/obj/item/toy/figure/tipos/levy = 1,
+		/obj/item/toy/figure/tipos/jack = 1,
+		/obj/item/toy/figure/tipos/lilly = 1,
+		/obj/item/toy/figure/tipos/dennis = 1,
+		/obj/item/toy/figure/tipos/connor = 1,
+		/obj/item/toy/figure/tipos/blue = 1,
+		/obj/item/toy/figure/tipos/white = 1,
+		/obj/item/toy/figure/tipos/yellow = 1,
 	)
 	crate_name = "caja de figuras"
 	crate_type = /obj/structure/closet/crate/wooden
