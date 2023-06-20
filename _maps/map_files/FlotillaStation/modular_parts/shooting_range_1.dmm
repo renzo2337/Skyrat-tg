@@ -46,10 +46,8 @@
 /area/station/security/range)
 "r" = (
 /obj/machinery/dish_drive/bullet,
-/obj/machinery/airalarm/Nitrogen_Atmosphere{
-	pixel_y = -24;
-	name = "south"
-	},
+/obj/machinery/airalarm/directional/south,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/range)
 "u" = (

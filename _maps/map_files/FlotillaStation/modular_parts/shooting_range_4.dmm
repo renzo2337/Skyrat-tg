@@ -30,11 +30,8 @@
 /area/station/security/range)
 "fk" = (
 /obj/item/kirbyplants/random,
-/obj/machinery/airalarm/Nitrogen_Atmosphere{
-	dir = 4;
-	name = "east";
-	pixel_x = 24
-	},
+/obj/machinery/airalarm/directional/east,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/range)
 "gy" = (
@@ -63,6 +60,11 @@
 /obj/structure/window/reinforced,
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green,
+/turf/open/floor/iron/dark/nitrogen,
+/area/station/security/range)
+"hM" = (
+/obj/machinery/airalarm/directional/south,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/range)
 "iu" = (
@@ -161,11 +163,6 @@
 /area/station/security/range)
 "uK" = (
 /obj/structure/table,
-/obj/machinery/airalarm/Nitrogen_Atmosphere{
-	dir = 1;
-	pixel_y = 24;
-	name = "north"
-	},
 /obj/item/storage/medkit/emergency,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/range)
@@ -213,11 +210,8 @@
 /area/station/security/range)
 "Dg" = (
 /obj/item/kirbyplants/random,
-/obj/machinery/airalarm/Nitrogen_Atmosphere{
-	dir = 1;
-	pixel_y = 24;
-	name = "north"
-	},
+/obj/machinery/airalarm/directional/north,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/range)
 "Dm" = (
@@ -410,7 +404,7 @@ nE
 vl
 vl
 vl
-vl
+hM
 "}
 (4,1,1) = {"
 KI

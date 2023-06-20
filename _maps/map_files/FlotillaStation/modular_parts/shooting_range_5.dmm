@@ -221,16 +221,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plating/nitrogen,
 /area/station/security/range)
-"yV" = (
-/obj/structure/disposalpipe/segment,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/Nitrogen_Atmosphere{
-	dir = 4;
-	name = "east";
-	pixel_x = 24
-	},
-/turf/open/floor/plating/nitrogen,
-/area/station/security/range)
 "AI" = (
 /obj/structure/grille,
 /obj/structure/window{
@@ -260,16 +250,6 @@
 /obj/structure/grille,
 /obj/structure/window{
 	dir = 8
-	},
-/turf/open/floor/plating/nitrogen,
-/area/station/security/range)
-"Ga" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable,
-/obj/machinery/airalarm/Nitrogen_Atmosphere{
-	dir = 8;
-	name = "west";
-	pixel_x = -24
 	},
 /turf/open/floor/plating/nitrogen,
 /area/station/security/range)
@@ -315,6 +295,8 @@
 /obj/effect/turf_decal/bot,
 /obj/item/screwdriver,
 /obj/effect/spawner/random/decoration/glowstick,
+/obj/machinery/airalarm/directional/east,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/plating/nitrogen,
 /area/station/security/range)
 "LO" = (
@@ -452,6 +434,13 @@
 	},
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/range)
+"ZJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable,
+/obj/machinery/airalarm/directional/east,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
+/turf/open/floor/plating/nitrogen,
+/area/station/security/range)
 
 (1,1,1) = {"
 bG
@@ -531,7 +520,7 @@ Wr
 bG
 aS
 lV
-yV
+Vb
 ts
 Vb
 kH
@@ -587,9 +576,9 @@ Wr
 Wr
 Wr
 Wr
-Wr
+ZJ
 JR
-Ga
+Wr
 AI
 bG
 bG

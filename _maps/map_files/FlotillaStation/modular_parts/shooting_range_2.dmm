@@ -181,6 +181,11 @@
 /obj/structure/cable,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/range)
+"B" = (
+/obj/machinery/airalarm/directional/south,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
+/turf/open/floor/iron/dark/nitrogen,
+/area/station/security/range)
 "C" = (
 /obj/structure/table,
 /obj/item/folder/red{
@@ -231,14 +236,6 @@
 "K" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 4
-	},
-/turf/open/floor/iron/dark/nitrogen,
-/area/station/security/range)
-"L" = (
-/obj/machinery/light/directional/south,
-/obj/machinery/airalarm/Nitrogen_Atmosphere{
-	pixel_y = -24;
-	name = "south"
 	},
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/range)
@@ -405,7 +402,7 @@ G
 G
 f
 x
-L
+U
 "}
 (5,1,1) = {"
 a
@@ -423,7 +420,7 @@ G
 G
 f
 x
-v
+B
 "}
 (6,1,1) = {"
 a

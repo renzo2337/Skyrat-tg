@@ -2443,6 +2443,7 @@
 	},
 /obj/effect/mapping_helpers/airalarm/unlocked,
 /obj/machinery/airalarm/directional/north,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/catwalk_floor/iron_dark/Nitrogen,
 /area/station/security/power_station)
 "alb" = (
@@ -3551,6 +3552,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/west,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/medical/exam_room)
 "apS" = (
@@ -13796,6 +13798,7 @@
 	dir = 4
 	},
 /obj/machinery/airalarm/directional/east,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/plating/nitrogen,
 /area/station/security/power_station)
 "ceO" = (
@@ -17730,6 +17733,7 @@
 /obj/item/melee/hammer,
 /obj/machinery/light/directional/east,
 /obj/machinery/airalarm/directional/east,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/ai_monitored/security/armory)
 "ebt" = (
@@ -19049,6 +19053,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/airalarm/directional/west,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/holding_cell)
 "eKt" = (
@@ -23012,6 +23017,7 @@
 /obj/item/clothing/mask/muzzle,
 /obj/item/clothing/mask/muzzle,
 /obj/machinery/airalarm/directional/north,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/medical)
 "gGp" = (
@@ -26895,6 +26901,7 @@
 "iFs" = (
 /obj/structure/filingcabinet/employment,
 /obj/machinery/airalarm/directional/west,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/service/lawoffice)
 "iFR" = (
@@ -26959,6 +26966,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/orange/hidden/layer4,
 /obj/structure/cable,
 /obj/machinery/airalarm/directional/north,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/interrogation)
 "iHd" = (
@@ -33015,6 +33023,7 @@
 	pixel_y = 5
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/detectives_office)
 "lKY" = (
@@ -34517,6 +34526,7 @@
 	dir = 1
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/nitrogen,
 /area/station/security/brig)
 "mun" = (
@@ -34542,6 +34552,11 @@
 	},
 /turf/open/floor/plating/nitrogen,
 /area/station/security/power_station)
+"mvg" = (
+/obj/machinery/telecomms/relay/preset/station,
+/obj/effect/turf_decal/stripes/box,
+/turf/open/floor/iron/smooth_large,
+/area/station/command/power_station)
 "mvi" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -38275,6 +38290,7 @@
 /area/station/hallway/primary/flotilla/command)
 "ohW" = (
 /obj/machinery/airalarm/directional/west,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/nitrogen,
 /area/station/command/heads_quarters/hos)
 "oia" = (
@@ -39420,6 +39436,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/orange/hidden/layer4,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/airalarm/directional/west,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/nitrogen,
 /area/station/security/brig)
 "oOi" = (
@@ -43124,6 +43141,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/orange/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer5,
 /obj/machinery/airalarm/directional/west,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/nitrogen,
 /area/station/security/brig)
 "qzU" = (
@@ -45910,6 +45928,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/airalarm/directional/east,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/lockers)
 "rSx" = (
@@ -50932,6 +50951,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/airalarm/directional/east,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/office)
 "uqG" = (
@@ -52400,9 +52420,6 @@
 /area/station/medical/paramedic)
 "uZG" = (
 /obj/structure/cable,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
@@ -55040,6 +55057,7 @@
 /obj/item/gun/energy/laser,
 /obj/item/storage/belt/military/snack/full,
 /obj/machinery/airalarm/directional/south,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/warden)
 "wkt" = (
@@ -56722,6 +56740,7 @@
 	dir = 8
 	},
 /obj/machinery/airalarm/directional/north,
+/obj/effect/mapping_helpers/airalarm/nitrogen,
 /turf/open/floor/iron/dark/nitrogen,
 /area/station/security/lockers)
 "xcL" = (
@@ -90560,7 +90579,7 @@ wVZ
 dZR
 uFE
 pKU
-pql
+mvg
 uZG
 gCr
 mPk
@@ -146847,7 +146866,7 @@ awH
 aYz
 ajm
 ajm
-aQt
+aoq
 oIj
 avE
 avE
