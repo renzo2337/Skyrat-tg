@@ -4,6 +4,8 @@
 /obj/item/toy/figure/tipos
 	icon = 'modular_tipos/master_files/icons/obj/toys/toy.dmi'
 
+//NT Update
+
 /obj/item/toy/figure/tipos/mysha
 	name = "\improper Figura de acción de Mysha"
 	icon_state = "mysha"
@@ -37,7 +39,7 @@
 /obj/item/toy/figure/tipos/venny
 	name = "\improper Figura de acción de Venny"
 	icon_state = "venny"
-	toysay = "La reina del rizz."
+	toysay = "*se la lleva a la cama."
 	toysound = 'modular_tipos/master_files/sound/effects/venny_sound.ogg'
 
 /obj/item/toy/figure/tipos/audyr
@@ -52,10 +54,10 @@
 	toysay = "Liggers."
 	toysound = 'sound/effects/roll.ogg'
 
-/obj/item/toy/figure/tipos/levy
-	name = "\improper Figura de acción de Levy"
-	icon_state = "levy"
-	toysay = "Ah que."
+/obj/item/toy/figure/tipos/levi
+	name = "\improper Figura de acción de Levi"
+	icon_state = "levi"
+	toysay = "Hey Kris! check out this new item i found in the cyberworld!"
 	toysound = 'modular_skyrat/modules/emotes/sound/voice/baa2.ogg'
 
 obj/item/toy/figure/tipos/jack
@@ -63,6 +65,80 @@ obj/item/toy/figure/tipos/jack
 	icon_state = "jack"
 	toysay = "NO WAY."
 	toysound = 'sound/items/geiger/med4.ogg'
+
+obj/item/toy/figure/tipos/nick
+	name = "\improper Figura de acción de Nick"
+	icon_state = "nick"
+	toysay = "Apagalo Otto!"
+	toysound = 'sound/items/drill_use.ogg'
+
+obj/item/toy/figure/tipos/june
+	name = "\improper Figura de acción de June"
+	icon_state = "june"
+	toysay = "NIGGER?"
+	toysound = 'modular_skyrat/modules/emotes/sound/voice/slime_squish.ogg'
+
+obj/item/toy/figure/tipos/gabo
+	name = "\improper Figura de acción de Gabo"
+	icon_state = "gabo"
+	toysay = "Kameron, ¿Hiciste tu papeleo anoche?"
+	toysound = 'sound/items/rped.ogg'
+
+obj/item/toy/figure/tipos/lokhir
+	name = "\improper Figura de acción de Lokhir"
+	icon_state = "lokhir"
+	toysay = "Foxte?"
+	toysound = 'sound/machines/fryer/deep_fryer_emerge.ogg'
+
+obj/item/toy/figure/tipos/hal
+	name = "\improper Figura de acción de Hal"
+	icon_state = "hal"
+	toysay = "You look Lonely, i can fix that."
+	toysound = 'modular_tipos/master_files/sound/effects/hal_sound.ogg'
+
+obj/item/toy/figure/tipos/sydney
+	name = "\improper Figura de acción de Sydney"
+	icon_state = "sydney"
+	toysay = "Trabaja zorra!"
+	toysound = 'sound/weapons/whip.ogg'
+
+obj/item/toy/figure/tipos/giselle
+	name = "\improper Figura de acción de Giselle"
+	icon_state = "giselle"
+	toysay = "Giselle se siente reconfortada."
+	toysound = 'modular_skyrat/modules/emotes/sound/emotes/female/female_sigh.ogg'
+
+obj/item/toy/figure/tipos/brett
+	name = "\improper Figura de acción de Brett"
+	icon_state = "brett"
+	toysay = "Iniciando sistema... ratón no encontrado, Brett necesita un abrazo."
+	toysound = 'modular_tipos/master_files/sound/effects/brett_sound.ogg'
+
+obj/item/toy/figure/tipos/soare
+	name = "\improper Figura de acción de Soare"
+	icon_state = "soare"
+	toysay = "Increible..."
+	toysound = 'sound/weapons/kenetic_accel.ogg'
+
+obj/item/toy/figure/tipos/kans
+	name = "\improper Figura de acción de Kans"
+	icon_state = "kans"
+	toysay = "NO SOY FURRO!! (Si es)."
+	toysound = 'modular_skyrat/modules/emotes/sound/voice/nya.ogg'
+
+obj/item/toy/figure/tipos/kameron
+	name = "\improper Figura de acción de Kameron"
+	icon_state = "kans"
+	toysay = "¿Quien mierda es Kans? -Kans"
+	toysound = 'sound/misc/sadtrombone.ogg'
+
+obj/item/toy/figure/tipos/dana
+	name = "\improper Figura de acción de Dana"
+	icon_state = "dana"
+	toysay = "Impresionante."
+	toysound = 'sound/items/rped.ogg'
+
+//Sindy Update
 
 /obj/item/toy/figure/tipos/lilly
 	name = "\improper Figura de acción de Lilly"
@@ -79,7 +155,7 @@ obj/item/toy/figure/tipos/jack
 /obj/item/toy/figure/tipos/connor
 	name = "\improper Figura de acción de Connor"
 	icon_state = "connor"
-	toysay = "Warble... warble..."
+	toysay = "No, no conzco a este hombre."
 	toysound = 'modular_skyrat/modules/emotes/sound/voice/warbles.ogg'
 
 /obj/item/toy/figure/tipos/blue
@@ -98,4 +174,4 @@ obj/item/toy/figure/tipos/jack
 	name = "\improper Figura de acción de Yellow?"
 	icon_state = "yellow"
 	toysay = "Fox 2 Bandit on 11o'Clock."
-	toysound = 'sound/vox_fem/syndicate.ogg'
+	toysound = 'sound/machines/nuke/angry_beep.ogg'
