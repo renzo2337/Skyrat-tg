@@ -75,8 +75,8 @@ obj/item/toy/figure/tipos/nick
 obj/item/toy/figure/tipos/june
 	name = "\improper Figura de acción de June"
 	icon_state = "june"
-	toysay = "NIGGER?"
-	toysound = 'modular_skyrat/modules/emotes/sound/voice/slime_squish.ogg'
+	toysay = "Ohaio! June esta haciendo su papeleo!"
+	toysound = 'modular_skyrat/modules/emotes/sound/emotes/meow.ogg'
 
 obj/item/toy/figure/tipos/gabo
 	name = "\improper Figura de acción de Gabo"
