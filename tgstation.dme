@@ -7105,7 +7105,9 @@
 #include "modular_skyrat\modules\xenos_skyrat_redo\code\xeno_types\spitter.dm"
 #include "modular_skyrat\modules\xenos_skyrat_redo\code\xeno_types\warrior.dm"
 #include "modular_tipos\master_files\code\game\objects\items\toys.dm"
+#include "modular_tipos\master_files\code\game\objects\items\storage\backpack.dm"
 #include "modular_tipos\modules\altborgs\code\robot_modules.dm"
 #include "modular_tipos\modules\cargo\packs\costumes_toys.dm"
 #include "modular_tipos\modules\customization\modules\mob\dead\new_player\sprite_accesories\ears.dm"
+#include "modular_tipos\modules\loadout\loadout_items\loadout_datum_inhands.dm"
 // END_INCLUDE
