@@ -1,7 +1,9 @@
 
+// Pack de Cargo - Figuras Los Tipos
+
 datum/supply_pack/costumes_toys/tipos
 	name = "Caja de figuras"
-	desc = "Contiene una gran variedad de muñecos de edición limitada los tipos."
+	desc = "Contiene una gran variedad de muñecos de edición limitada Los Tipos."
 	cost = CARGO_CRATE_VALUE * 10
 	contains = list(
 		/obj/item/toy/figure/tipos/mysha = 1,
@@ -26,6 +28,9 @@ datum/supply_pack/costumes_toys/tipos
 		/obj/item/toy/figure/tipos/kans = 1,
 		/obj/item/toy/figure/tipos/kameron = 1,
 		/obj/item/toy/figure/tipos/dana = 1,
+		/obj/item/toy/figure/tipos/vaum = 1,
+		/obj/item/toy/figure/tipos/cathy = 1,
+		/obj/item/toy/figure/tipos/zsle = 1,
 		/obj/item/toy/figure/tipos/lilly = 1,
 		/obj/item/toy/figure/tipos/dennis = 1,
 		/obj/item/toy/figure/tipos/connor = 1,
@@ -36,3 +41,34 @@ datum/supply_pack/costumes_toys/tipos
 	crate_name = "caja de figuras"
 	crate_type = /obj/structure/closet/crate/wooden
 
+// Pack de Cargo - Figuras Manaos
+
+datum/supply_pack/costumes_toys/manaos
+	name = "Caja de figuras descontinuadas"
+	desc = "Contiene una gran variedad de muñecos descontinuadiso de edición Manaos."
+	cost = CARGO_CRATE_VALUE * 3
+	contains = list(
+		/obj/item/toy/figure/manaos/ana = 1,
+		/obj/item/toy/figure/manaos/smug = 1,
+		/obj/item/toy/figure/manaos/alicia = 1,
+		/obj/item/toy/figure/manaos/alysson = 1,
+		/obj/item/toy/figure/manaos/jr = 1,
+		/obj/item/toy/figure/manaos/arkin = 1,
+		/obj/item/toy/figure/manaos/darkness = 1,
+		/obj/item/toy/figure/manaos/uzume = 1,
+		/obj/item/toy/figure/manaos/suki = 1,
+		/obj/item/toy/figure/manaos/camilo = 1,
+		/obj/item/toy/figure/manaos/honkito = 1,
+		/obj/item/toy/figure/manaos/manuel = 1,
+		/obj/item/toy/figure/manaos/bruno = 1,
+		/obj/item/toy/figure/manaos/ariel = 1,
+		/obj/item/toy/figure/manaos/slimy = 1,
+		/obj/item/toy/figure/manaos/wh = 1,
+		/obj/item/toy/figure/manaos/aleph = 1,
+		/obj/item/toy/figure/manaos/area = 1,
+		/obj/item/toy/figure/manaos/vlad = 1,
+		/obj/item/toy/figure/manaos/franco = 1,
+		/obj/item/toy/figure/manaos/sam = 1,
+	)
+	crate_name = "caja de figuras descontinuadas"
+	crate_type = /obj/structure/closet/crate/wooden
