@@ -4,7 +4,7 @@
 /obj/item/toy/figure/tipos
 	icon = 'modular_tipos/master_files/icons/obj/toys/toy.dmi'
 
-//NT Update
+// Figuras - NT Update
 
 /obj/item/toy/figure/tipos/mysha
 	name = "\improper Figura de acción de Mysha"
@@ -60,85 +60,103 @@
 	toysay = "Hey Kris! check out this new item i found in the cyberworld!"
 	toysound = 'modular_skyrat/modules/emotes/sound/voice/baa2.ogg'
 
-obj/item/toy/figure/tipos/jack
+/obj/item/toy/figure/tipos/jack
 	name = "\improper Figura de acción de Jack"
 	icon_state = "jack"
 	toysay = "NO WAY."
 	toysound = 'sound/items/geiger/med4.ogg'
 
-obj/item/toy/figure/tipos/nick
+/obj/item/toy/figure/tipos/nick
 	name = "\improper Figura de acción de Nick"
 	icon_state = "nick"
 	toysay = "Apagalo Otto!"
 	toysound = 'sound/items/drill_use.ogg'
 
-obj/item/toy/figure/tipos/june
+/obj/item/toy/figure/tipos/june
 	name = "\improper Figura de acción de June"
 	icon_state = "june"
 	toysay = "Ohaio! June esta haciendo su papeleo!"
 	toysound = 'modular_skyrat/modules/emotes/sound/emotes/meow.ogg'
 
-obj/item/toy/figure/tipos/gabo
+/obj/item/toy/figure/tipos/gabo
 	name = "\improper Figura de acción de Gabo"
 	icon_state = "gabo"
 	toysay = "Kameron, ¿Hiciste tu papeleo anoche?"
 	toysound = 'sound/items/rped.ogg'
 
-obj/item/toy/figure/tipos/lokhir
+/obj/item/toy/figure/tipos/lokhir
 	name = "\improper Figura de acción de Lokhir"
 	icon_state = "lokhir"
 	toysay = "Foxte?"
 	toysound = 'sound/machines/fryer/deep_fryer_emerge.ogg'
 
-obj/item/toy/figure/tipos/hal
+/obj/item/toy/figure/tipos/hal
 	name = "\improper Figura de acción de Hal"
 	icon_state = "hal"
 	toysay = "You look Lonely, i can fix that."
 	toysound = 'modular_tipos/master_files/sound/effects/hal_sound.ogg'
 
-obj/item/toy/figure/tipos/sydney
+/obj/item/toy/figure/tipos/sydney
 	name = "\improper Figura de acción de Sydney"
 	icon_state = "sydney"
 	toysay = "Trabaja zorra!"
 	toysound = 'sound/weapons/whip.ogg'
 
-obj/item/toy/figure/tipos/giselle
+/obj/item/toy/figure/tipos/giselle
 	name = "\improper Figura de acción de Giselle"
 	icon_state = "giselle"
 	toysay = "Giselle se siente reconfortada."
 	toysound = 'modular_skyrat/modules/emotes/sound/emotes/female/female_sigh.ogg'
 
-obj/item/toy/figure/tipos/brett
+/obj/item/toy/figure/tipos/brett
 	name = "\improper Figura de acción de Brett"
 	icon_state = "brett"
 	toysay = "Iniciando sistema... ratón no encontrado, Brett necesita un abrazo."
 	toysound = 'modular_tipos/master_files/sound/effects/brett_sound.ogg'
 
-obj/item/toy/figure/tipos/soare
+/obj/item/toy/figure/tipos/soare
 	name = "\improper Figura de acción de Soare"
 	icon_state = "soare"
 	toysay = "Increible..."
-	toysound = 'sound/weapons/kenetic_accel.ogg'
+	toysound = 'modular_tipos/master_files/sound/effects/soare_sound.ogg'
 
-obj/item/toy/figure/tipos/kans
+/obj/item/toy/figure/tipos/kans
 	name = "\improper Figura de acción de Kans"
 	icon_state = "kans"
-	toysay = "NO SOY FURRO!! (Si es)."
+	toysay = "NO PUEDO TENGO LA PIJA DURA."
 	toysound = 'modular_skyrat/modules/emotes/sound/voice/nya.ogg'
 
-obj/item/toy/figure/tipos/kameron
+/obj/item/toy/figure/tipos/kameron
 	name = "\improper Figura de acción de Kameron"
-	icon_state = "kans"
+	icon_state = "kansmeron"
 	toysay = "¿Quien mierda es Kans? -Kans"
 	toysound = 'sound/misc/sadtrombone.ogg'
 
-obj/item/toy/figure/tipos/dana
+/obj/item/toy/figure/tipos/dana
 	name = "\improper Figura de acción de Dana"
 	icon_state = "dana"
 	toysay = "Impresionante."
 	toysound = 'sound/items/rped.ogg'
 
-//Sindy Update
+/obj/item/toy/figure/tipos/vaum
+	name = "\improper Figura de acción de Vaum"
+	icon_state = "vaum"
+	toysay = "Rentable..."
+	toysound = 'modular_tipos/master_files/sound/effects/zeph_sound.ogg'
+
+/obj/item/toy/figure/tipos/cathy
+	name = "\improper Figura de acción de Catherine"
+	icon_state = "cathy"
+	toysay = "Bueno, pero gracias a dios todo salio bien al final."
+	toysound = 'sound/weapons/kenetic_accel.ogg'
+
+/obj/item/toy/figure/tipos/zsle
+	name = "\improper Figura de acción de Zsle"
+	icon_state = "zsle"
+	toysay = "Rico."
+	toysound = 'modular_skyrat/modules/emotes/sound/emotes/female/burp_f.ogg'
+
+// Figuras - Sindy Update
 
 /obj/item/toy/figure/tipos/lilly
 	name = "\improper Figura de acción de Lilly"
@@ -155,7 +173,7 @@ obj/item/toy/figure/tipos/dana
 /obj/item/toy/figure/tipos/connor
 	name = "\improper Figura de acción de Connor"
 	icon_state = "connor"
-	toysay = "No, no conzco a este hombre."
+	toysay = "No, no conozco a este hombre."
 	toysound = 'modular_skyrat/modules/emotes/sound/voice/warbles.ogg'
 
 /obj/item/toy/figure/tipos/blue
@@ -175,3 +193,122 @@ obj/item/toy/figure/tipos/dana
 	icon_state = "yellow"
 	toysay = "Fox 2 Bandit on 11o'Clock."
 	toysound = 'sound/machines/nuke/angry_beep.ogg'
+
+// Figuras - Manaos Update
+
+/obj/item/toy/figure/manaos
+	icon = 'modular_tipos/master_files/icons/obj/toys/toy.dmi'
+	toysound = 'sound/machines/click.ogg'
+
+/obj/item/toy/figure/manaos/ana
+	name = "\improper Figura de acción descontinuada de Ana"
+	icon_state = "ana"
+	toysay = "Chale..."
+	toysound = 'modular_skyrat/modules/emotes/sound/voice/slime_squish.ogg'
+
+/obj/item/toy/figure/manaos/smug
+	name = "\improper Figura de acción descontinuada de Smug"
+	icon_state = "smug"
+	toysay = "Nya! *pukes on carpet*"
+	toysound = 'sound/effects/splat.ogg'
+
+/obj/item/toy/figure/manaos/alicia
+	name = "\improper Figura de acción descontinuada de Alicia"
+	icon_state = "alicia"
+	toysay = "IS SCIENCE TIME!"
+
+/obj/item/toy/figure/manaos/alysson
+	name = "\improper Figura de acción descontinuada de Alysson"
+	icon_state = "alysson"
+	toysay = "Ahora con cabello 100% natural."
+
+/obj/item/toy/figure/manaos/jr
+	name = "\improper Figura de acción descontinuada de Jr"
+	icon_state = "jr"
+	toysay = "Hm..."
+
+/obj/item/toy/figure/manaos/arkin
+	name = "\improper Figura de acción descontinuada de Arkin"
+	icon_state = "arkin"
+	toysay = "Huele a nicotina."
+
+/obj/item/toy/figure/manaos/darkness
+	name = "\improper Figura de acción descontinuada de Darkness"
+	icon_state = "darkness"
+	toysay = "La fuerza poderosa en ti es..."
+
+/obj/item/toy/figure/manaos/uzume
+	name = "\improper Figura de acción descontinuada de Uzume"
+	icon_state = "uzume"
+	toysay = "Como nuevo!"
+	toysound = 'modular_skyrat/modules/emotes/sound/voice/slime_squish.ogg'
+
+/obj/item/toy/figure/manaos/suki
+	name = "\improper Figura de acción descontinuada de Suki"
+	icon_state = "suki"
+	toysay = "Que bonito!"
+	toysound = 'modular_skyrat/modules/emotes/sound/voice/slime_squish.ogg'
+
+/obj/item/toy/figure/manaos/camilo
+	name = "\improper Figura de acción descontinuada de Camilo"
+	icon_state = "camilo"
+	toysay = "Bien hecho."
+
+/obj/item/toy/figure/manaos/honkito
+	name = "\improper Figura de acción descontinuada de Honkito"
+	icon_state = "honkito"
+	toysay = "Honk!"
+	toysound = 'sound/items/bikehorn.ogg'
+
+/obj/item/toy/figure/manaos/manuel
+	name = "\improper Figura de acción descontinuada de Manuel"
+	icon_state = "manuel"
+	toysay = "Eh tio..."
+
+/obj/item/toy/figure/manaos/bruno
+	name = "\improper Figura de acción descontinuada de Bruno"
+	icon_state = "bruno"
+	toysay = "Era muy madura para su edad."
+	toysound = 'sound/voice/lizard/lizard_scream_1.ogg'
+
+/obj/item/toy/figure/manaos/ariel
+	name = "\improper Figura de acción descontinuada de Ariel"
+	icon_state = "ariel"
+	toysay = "Hm?"
+	toysound = 'sound/voice/lizard/lizard_scream_1.ogg'
+
+/obj/item/toy/figure/manaos/slimy
+	name = "\improper Figura de acción descontinuada de Slimy"
+	icon_state = "slimy"
+	toysay = "Jum!"
+	toysound = 'modular_skyrat/modules/emotes/sound/voice/slime_squish.ogg'
+
+/obj/item/toy/figure/manaos/wh
+	name = "\improper Figura de acción descontinuada de WH-RL-W"
+	icon_state = "wh"
+	toysay = "Robo... que?"
+
+/obj/item/toy/figure/manaos/aleph
+	name = "\improper Figura de acción descontinuada de Aleph"
+	icon_state = "aleph"
+	toysay = "Interesante..."
+
+/obj/item/toy/figure/manaos/sam
+	name = "\improper Figura de acción descontinuada de Sam"
+	icon_state = "sam"
+	toysay = "Yippie!"
+
+/obj/item/toy/figure/manaos/area
+	name = "\improper Figura de acción descontinuada de Area"
+	icon_state = "area"
+	toysay = "Insertar frase aqui."
+
+/obj/item/toy/figure/manaos/vlad
+	name = "\improper Figura de acción descontinuada de Vlad"
+	icon_state = "vlad"
+	toysay = "La C20-R viene por separado."
+
+/obj/item/toy/figure/manaos/franco
+	name = "\improper Figura de acción descontinuada de Franco"
+	icon_state = "franco"
+	toysay = "Denme un mono ya!"
