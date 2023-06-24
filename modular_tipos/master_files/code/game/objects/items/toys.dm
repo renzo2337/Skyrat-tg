@@ -93,7 +93,7 @@
 /obj/item/toy/figure/tipos/hal
 	name = "\improper Figura de acción de Hal"
 	icon_state = "hal"
-	toysay = "You look Lonely, i can fix that."
+	toysay = "SHIT!! GRENADE! THROW IT BACK, PRIVATE! NOW!!"
 	toysound = 'modular_tipos/master_files/sound/effects/hal_sound.ogg'
 
 /obj/item/toy/figure/tipos/sydney
