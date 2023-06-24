@@ -12255,6 +12255,9 @@
 /obj/effect/mapping_helpers/mail_sorting/engineering/atmospherics,
 /obj/effect/mapping_helpers/mail_sorting/engineering/ce_office,
 /obj/effect/mapping_helpers/mail_sorting/engineering/general,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
 /turf/open/floor/iron/herringbone,
 /area/station/hallway/primary/flotilla/service/upper/fore)
 "bwD" = (
