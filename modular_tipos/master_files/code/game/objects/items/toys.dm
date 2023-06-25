@@ -312,3 +312,17 @@
 	name = "\improper Figura de acción descontinuada de Franco"
 	icon_state = "franco"
 	toysay = "Denme un mono ya!"
+
+// Los Tipos - Peluches
+
+/obj/item/toy/plush/tipos
+	icon = 'modular_tipos/master_files/icons/obj/toys/toy.dmi'
+	inhand_icon_state = null
+
+/obj/item/toy/plush/tipos/jade
+	name = "Jade peluche"
+	desc = "Un adorable juguete de peluche que se asemeja a un gato persa. Cuidado, podria matarte."
+	icon_state = "p_jade"
+	attack_verb_continuous = "hits"
+	attack_verb_simple = "hit"
+	squeak_override = list('modular_tipos/master_files/sound/effects/jade_sound.ogg' = 1)
