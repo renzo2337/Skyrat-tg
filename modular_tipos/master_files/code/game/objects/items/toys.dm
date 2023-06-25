@@ -320,7 +320,7 @@
 	inhand_icon_state = null
 
 /obj/item/toy/plush/tipos/jade
-	name = "peluche de Jade"
+	name = "Jade peluche"
 	desc = "Un adorable juguete de peluche que se asemeja a un gato persa."
 	icon_state = "p_jade"
 	attack_verb_continuous = "hits"

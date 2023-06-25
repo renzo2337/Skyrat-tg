@@ -8,5 +8,5 @@
 // Los Tipos - Custom Loadout Toys
 
 /datum/loadout_item/toys/jade
-	name = "Peluche de Jade"
+	name = "Jade peluche"
 	item_path = /obj/item/toy/plush/tipos/jade
