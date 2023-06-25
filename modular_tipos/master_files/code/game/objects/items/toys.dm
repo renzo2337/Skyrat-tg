@@ -321,7 +321,7 @@
 
 /obj/item/toy/plush/tipos/jade
 	name = "Jade peluche"
-	desc = "Un adorable juguete de peluche que se asemeja a un gato persa."
+	desc = "Un adorable juguete de peluche que se asemeja a un gato persa. Cuidado, podria matarte."
 	icon_state = "p_jade"
 	attack_verb_continuous = "hits"
 	attack_verb_simple = "hit"
