@@ -7121,5 +7121,5 @@
 #include "modular_tipos\modules\altborgs\code\robot_modules.dm"
 #include "modular_tipos\modules\cargo\packs\costumes_toys.dm"
 #include "modular_tipos\modules\customization\modules\mob\dead\new_player\sprite_accesories\ears.dm"
-#include "modular_tipos\modules\loadout\loadout_items\loadout_datum_inhands.dm"
+#include "modular_tipos\modules\loadout\loadout_items\loadout_datum.dm"
 // END_INCLUDE
