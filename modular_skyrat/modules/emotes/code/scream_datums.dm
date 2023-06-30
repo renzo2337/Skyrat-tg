@@ -49,7 +49,7 @@ GLOBAL_LIST_EMPTY(scream_types)
 	name = "Cat Scream"
 	male_screamsounds = list('modular_skyrat/modules/emotes/sound/emotes/cat_scream.ogg')
 	female_screamsounds = null
-
+	
 /datum/scream_type/xeno
 	name = "Xeno Scream"
 	male_screamsounds = list('sound/voice/hiss6.ogg')
