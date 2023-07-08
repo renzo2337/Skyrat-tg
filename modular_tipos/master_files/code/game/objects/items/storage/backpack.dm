@@ -11,7 +11,6 @@
 	icon_state = "rig_civ"
 	inhand_icon_state = null
 
-
 /obj/item/storage/backpack/satchel/tipos/aba_reng
 	name = "Engineering rig"
 	desc = "A stylish bar of cyan light, carrying all your items thanks to bluespace shenanigans. Designed for engineers. Perfect to survive against fleshy monsters."
