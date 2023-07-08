@@ -98,6 +98,10 @@
 	item_path = /obj/item/clothing/shoes/winterboots/ice_boots
 	cost_per_order = 2500
 
+/datum/orderable_item/mining/capsule/bathroom
+	item_path = /obj/item/survivalcapsule/bathroom
+	cost_per_order = 375
+
 /datum/orderable_item/mining/style_meter
 	item_path = /obj/item/style_meter
 	cost_per_order = 1500
@@ -117,7 +121,4 @@
 /datum/orderable_item/mining/EXPOhelmet
 	item_path = /obj/item/clothing/head/utility/EXPOhelmet
 	cost_per_order = 501
-
-
-
 

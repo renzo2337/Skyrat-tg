@@ -174,6 +174,3 @@
 		/obj/item/clothing/suit/armor/COMMsuit = 3,
 		/obj/item/clothing/head/utility/COMMhelmet = 3,
 	)
-
-
-
