@@ -105,3 +105,20 @@
 /datum/orderable_item/mining/style_meter
 	item_path = /obj/item/style_meter
 	cost_per_order = 1500
+
+/datum/orderable_item/mining/MINEsuit
+	item_path = /obj/item/clothing/suit/armor/MINEsuit
+	cost_per_order = 2000
+
+/datum/orderable_item/mining/MINEhelmet
+	item_path = /obj/item/clothing/head/utility/MINEhelmet
+	cost_per_order = 500
+
+/datum/orderable_item/mining/EXPOsuit
+	item_path = /obj/item/clothing/suit/armor/EXPOsuit
+	cost_per_order = 2001
+
+/datum/orderable_item/mining/EXPOhelmet
+	item_path = /obj/item/clothing/head/utility/EXPOhelmet
+	cost_per_order = 501
+

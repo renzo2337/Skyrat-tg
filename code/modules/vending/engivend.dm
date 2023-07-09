@@ -25,6 +25,10 @@
 		/obj/item/storage/belt/utility = 3,
 		///obj/item/construction/rcd/loaded = 2, // SKYRAT EDIT REMOVAL
 		/obj/item/storage/box/smart_metal_foam = 1,
+		/obj/item/clothing/suit/armor/ENGsuit = 3,
+		/obj/item/clothing/head/utility/ENGhelmet = 3,
+		/obj/item/clothing/suit/armor/CONSsuit = 3,
+		/obj/item/clothing/head/utility/CONShelmet = 3,
 	)
 	refill_canister = /obj/item/vending_refill/engivend
 	default_price = PAYCHECK_CREW

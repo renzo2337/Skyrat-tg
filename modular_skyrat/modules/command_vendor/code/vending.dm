@@ -171,5 +171,6 @@
 		/obj/item/clothing/under/rank/captain/skyrat/imperial/generic/grey = 5,
 		/obj/item/clothing/under/rank/captain/skyrat/imperial/generic/pants = 5,
 		/obj/item/clothing/under/rank/captain/skyrat/imperial/generic/red = 5,
+		/obj/item/clothing/suit/armor/COMMsuit = 3,
+		/obj/item/clothing/head/utility/COMMhelmet = 3,
 	)
-
