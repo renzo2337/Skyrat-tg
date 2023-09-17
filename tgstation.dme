@@ -6899,7 +6899,6 @@
 #include "modular_skyrat\modules\mapping\flotillastation\iron_floor.dm"
 #include "modular_skyrat\modules\mapping\flotillastation\misc_plating.dm"
 #include "modular_skyrat\modules\mapping\flotillastation\vent_scrubber.dm"
-#include "modular_skyrat\modules\mapping\code\lockers\interdynefob_lockers.dm"
 #include "modular_skyrat\modules\mapping\code\lockers\cargodiselost\cargodiselockers.dm"
 #include "modular_skyrat\modules\mapping\code\lockers\interdyne_fob\cargo.dm"
 #include "modular_skyrat\modules\mapping\code\lockers\interdyne_fob\command.dm"
@@ -7512,4 +7511,5 @@
 #include "modular_tipos\modules\cargo\packs\costumes_toys.dm"
 #include "modular_tipos\modules\customization\modules\mob\dead\new_player\sprite_accesories\ears.dm"
 #include "modular_tipos\modules\loadout\loadout_items\loadout_datum.dm"
+#include "modular_tipos\master_files\code\game\objects\items\clothing.dm"
 // END_INCLUDE

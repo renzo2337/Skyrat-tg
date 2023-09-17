@@ -227,7 +227,7 @@
 	lefthand_file = 'modular_tipos/master_files/icons/mob/clothing/onhand_aba_L.dmi'
 	righthand_file = 'modular_tipos/master_files/icons/mob/clothing/onhand_aba_R.dmi'
 	desc = "A lightweight space helmet designed to protect its wearer from prolonged radiation exposure; typically worn by private-sector salvage operators."
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | PLASMAMAN_HELMET_EXEMPT | HEADINTERNALS
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | HEADINTERNALS
 	armor_type = /datum/armor/abarighelmeteva
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	transparent_protection = HIDEMASK
@@ -303,7 +303,7 @@
 	lefthand_file = 'modular_tipos/master_files/icons/mob/clothing/onhand_aba_L.dmi'
 	righthand_file = 'modular_tipos/master_files/icons/mob/clothing/onhand_aba_R.dmi'
 	desc = "A lightweight space helmet designed to protect its wearer from prolonged radiation exposure; typically worn by private-sector salvage operators."
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | PLASMAMAN_HELMET_EXEMPT | HEADINTERNALS
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | HEADINTERNALS
 	armor_type = /datum/armor/abarighelmet
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	transparent_protection = HIDEMASK
@@ -385,7 +385,7 @@
 	lefthand_file = 'modular_tipos/master_files/icons/mob/clothing/onhand_aba_L.dmi'
 	righthand_file = 'modular_tipos/master_files/icons/mob/clothing/onhand_aba_R.dmi'
 	desc = "A lightweight space helmet designed to protect its wearer from prolonged radiation exposure; typically worn by private-sector salvage operators."
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | PLASMAMAN_HELMET_EXEMPT | HEADINTERNALS
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | HEADINTERNALS
 	armor_type = /datum/armor/abarighelmet
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	transparent_protection = HIDEMASK
@@ -466,7 +466,7 @@
 	lefthand_file = 'modular_tipos/master_files/icons/mob/clothing/onhand_aba_L.dmi'
 	righthand_file = 'modular_tipos/master_files/icons/mob/clothing/onhand_aba_R.dmi'
 	desc = "A lightweight space helmet designed to protect its wearer from prolonged radiation exposure; typically worn by private-sector salvage operators."
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | PLASMAMAN_HELMET_EXEMPT | HEADINTERNALS
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | HEADINTERNALS
 	armor_type = /datum/armor/abarighelmetcomm
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	transparent_protection = HIDEMASK
@@ -542,7 +542,7 @@
 	lefthand_file = 'modular_tipos/master_files/icons/mob/clothing/onhand_aba_L.dmi'
 	righthand_file = 'modular_tipos/master_files/icons/mob/clothing/onhand_aba_R.dmi'
 	desc = "A lightweight space helmet designed to protect its wearer from prolonged radiation exposure; typically worn by private-sector salvage operators."
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | PLASMAMAN_HELMET_EXEMPT | HEADINTERNALS
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | HEADINTERNALS
 	armor_type = /datum/armor/abarighelmeteng
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	transparent_protection = HIDEMASK
@@ -617,7 +617,7 @@
 	lefthand_file = 'modular_tipos/master_files/icons/mob/clothing/onhand_aba_L.dmi'
 	righthand_file = 'modular_tipos/master_files/icons/mob/clothing/onhand_aba_R.dmi'
 	desc = "A lightweight space helmet designed to protect its wearer from prolonged radiation exposure; typically worn by private-sector salvage operators."
-	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | PLASMAMAN_HELMET_EXEMPT | HEADINTERNALS
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | SNUG_FIT | HEADINTERNALS
 	armor_type = /datum/armor/abarighelmeteng
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	transparent_protection = HIDEMASK
