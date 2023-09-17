@@ -266,12 +266,12 @@ SUBSYSTEM_DEF(shuttle)
 		log_shuttle("[msg] Alive: [alive], Roundstart: [total], Threshold: [threshold]")
 		emergency_no_recall = TRUE
 		priority_announce("Catastrophic casualties detected: crisis shuttle protocols activated - jamming recall signals across all frequencies.")
-		if(emergency.timeLeft(1) > emergency_call_time * 0.4)
-			emergency.request(null, set_coefficient = 0.4)
+		if(emergency.timeLeft(1) > emergency_call_time * ALERT_COEFF_AUTOEVAC_CRITICAL)
+			emergency.request(null, set_coefficient = ALERT_COEFF_AUTOEVAC_CRITICAL)
 
 /datum/controller/subsystem/shuttle/proc/block_recall(lockout_timer)
 	if(admin_emergency_no_recall)
-		priority_announce("Error!", "Emergency Shuttle Uplink Alert", 'sound/misc/announce_dig.ogg')
+		priority_announce("Error!", "Emergency Shuttle Uplink Alert", ANNOUNCER_SHUTTLE) // SKYRAT EDIT CHANGE - Announcer Sounds
 		addtimer(CALLBACK(src, PROC_REF(unblock_recall)), lockout_timer)
 		return
 	emergency_no_recall = TRUE
@@ -279,7 +279,7 @@ SUBSYSTEM_DEF(shuttle)
 
 /datum/controller/subsystem/shuttle/proc/unblock_recall()
 	if(admin_emergency_no_recall)
-		priority_announce("Error!", "Emergency Shuttle Uplink Alert", 'sound/misc/announce_dig.ogg')
+		priority_announce("Error!", "Emergency Shuttle Uplink Alert", ANNOUNCER_SHUTTLE) // SKYRAT EDIT CHANGE - Announcer Sounds
 		return
 	emergency_no_recall = FALSE
 
@@ -473,7 +473,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	if(callShuttle)
 		if(EMERGENCY_IDLE_OR_RECALLED)
-			emergency.request(null, set_coefficient = 2.5)
+			emergency.request(null, set_coefficient = ALERT_COEFF_AUTOEVAC_NORMAL)
 			log_shuttle("There is no means of calling the emergency shuttle anymore. Shuttle automatically called.")
 			message_admins("All the communications consoles were destroyed and all AIs are inactive. Shuttle called.")
 
@@ -805,9 +805,9 @@ SUBSYSTEM_DEF(shuttle)
 	hidden_shuttle_turf_images -= remove_images
 	hidden_shuttle_turf_images += add_images
 
-	for(var/V in GLOB.navigation_computers)
-		var/obj/machinery/computer/camera_advanced/shuttle_docker/C = V
-		C.update_hidden_docking_ports(remove_images, add_images)
+	for(var/obj/machinery/computer/camera_advanced/shuttle_docker/docking_computer \
+		as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/computer/camera_advanced/shuttle_docker))
+		docking_computer.update_hidden_docking_ports(remove_images, add_images)
 
 	QDEL_LIST(remove_images)
 
@@ -938,6 +938,8 @@ SUBSYSTEM_DEF(shuttle)
 	if(preview_shuttle)
 		preview_shuttle.jumpToNullSpace()
 	preview_shuttle = null
+	if(preview_reservation)
+		QDEL_NULL(preview_reservation)
 
 /datum/controller/subsystem/shuttle/ui_state(mob/user)
 	return GLOB.admin_state

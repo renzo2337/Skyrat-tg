@@ -70,7 +70,7 @@
 /obj/docking_port/has_gravity(turf/current_turf)
 	return TRUE
 
-/obj/docking_port/take_damage()
+/obj/docking_port/take_damage(damage_amount, damage_type = BRUTE, damage_flag = "", sound_effect = TRUE, attack_dir, armour_penetration = 0)
 	return
 
 /obj/docking_port/singularity_pull()
@@ -439,7 +439,8 @@
 	var/current_engine_power = 0
 	///How much engine power (thrust) the shuttle starts with at mapload.
 	var/initial_engine_power = 0
-
+	///Speed multiplier based on station alert level
+	var/alert_coeff = ALERT_COEFF_BLUE
 	///used as a timer (if you want time left to complete move, use timeLeft proc)
 	var/timer
 	var/last_timer_length
@@ -798,7 +799,7 @@
 			if(sunset_mobs.mind && !istype(get_area(sunset_mobs), /area/shuttle/escape/brig))
 				sunset_mobs.mind.force_escaped = TRUE
 			// Ghostize them and put them in nullspace stasis (for stat & possession checks)
-			sunset_mobs.notransform = TRUE
+			ADD_TRAIT(sunset_mobs, TRAIT_NO_TRANSFORM, REF(src))
 			sunset_mobs.ghostize(FALSE)
 			sunset_mobs.moveToNullspace()
 
@@ -831,7 +832,7 @@
 	return ripple_turfs
 
 /obj/docking_port/mobile/proc/check_poddoors()
-	for(var/obj/machinery/door/poddoor/shuttledock/pod in GLOB.airlocks)
+	for(var/obj/machinery/door/poddoor/shuttledock/pod as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/door/poddoor/shuttledock))
 		pod.check()
 
 /obj/docking_port/mobile/proc/dock_id(id)
@@ -941,6 +942,20 @@
 		return
 	time_remaining *= multiple
 	last_timer_length *= multiple
+	setTimer(time_remaining)
+
+/obj/docking_port/mobile/proc/alert_coeff_change(new_coeff)
+	if(isnull(new_coeff))
+		return
+
+	var/time_multiplier = new_coeff / alert_coeff
+	var/time_remaining = timer - world.time
+	if(time_remaining < 0 || !last_timer_length)
+		return
+
+	time_remaining *= time_multiplier
+	last_timer_length *= time_multiplier
+	alert_coeff = new_coeff
 	setTimer(time_remaining)
 
 /obj/docking_port/mobile/proc/invertTimer()

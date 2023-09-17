@@ -28,6 +28,8 @@
 	var/scanmode = SCANMODE_HEALTH
 	var/advanced = FALSE
 	custom_price = PAYCHECK_COMMAND
+	/// If this analyzer will give a bonus to wound treatments apon woundscan.
+	var/give_wound_treatment_bonus = FALSE
 
 /obj/item/healthanalyzer/Initialize(mapload)
 	. = ..()
@@ -199,9 +201,9 @@
 				trauma_text += trauma_desc
 			render_list += "<span class='alert ml-1'>Cerebral traumas detected: subject appears to be suffering from [english_list(trauma_text)].</span>\n"
 		if(carbontarget.quirks.len)
-			render_list += "<span class='info ml-1'>Subject Major Disabilities: [carbontarget.get_quirk_string(FALSE, CAT_QUIRK_MAJOR_DISABILITY)].</span>\n"
+			render_list += "<span class='info ml-1'>Subject Major Disabilities: [carbontarget.get_quirk_string(FALSE, CAT_QUIRK_MAJOR_DISABILITY, from_scan = TRUE)].</span>\n"
 			if(advanced)
-				render_list += "<span class='info ml-1'>Subject Minor Disabilities: [carbontarget.get_quirk_string(FALSE, CAT_QUIRK_MINOR_DISABILITY)].</span>\n"
+				render_list += "<span class='info ml-1'>Subject Minor Disabilities: [carbontarget.get_quirk_string(FALSE, CAT_QUIRK_MINOR_DISABILITY, TRUE)].</span>\n"
 
 	if (HAS_TRAIT(target, TRAIT_IRRADIATED))
 		render_list += "<span class='alert ml-1'>Subject is irradiated. Supply toxin healing.</span>\n"
@@ -285,19 +287,18 @@
 						[advanced ? "<td><font color='#ff3333'>[CEILING(organ.damage,1)]</font></td>" : ""]\
 						<td>[status]</td></tr>"
 
-			var/datum/species/the_dudes_species = humantarget.dna.species
 			var/missing_organs = list()
 			if(!humantarget.get_organ_slot(ORGAN_SLOT_BRAIN))
 				missing_organs += "brain"
-			if(!HAS_TRAIT(humantarget, TRAIT_NOBLOOD) && !humantarget.get_organ_slot(ORGAN_SLOT_HEART))
+			if(!HAS_TRAIT_FROM(humantarget, TRAIT_NOBLOOD, SPECIES_TRAIT) && !humantarget.get_organ_slot(ORGAN_SLOT_HEART))
 				missing_organs += "heart"
-			if(!(TRAIT_NOBREATH in the_dudes_species.inherent_traits) && !humantarget.get_organ_slot(ORGAN_SLOT_LUNGS))
+			if(!HAS_TRAIT_FROM(humantarget, TRAIT_NOBREATH, SPECIES_TRAIT) && !humantarget.get_organ_slot(ORGAN_SLOT_LUNGS))
 				missing_organs += "lungs"
-			if(!(TRAIT_NOMETABOLISM in the_dudes_species.inherent_traits) && !humantarget.get_organ_slot(ORGAN_SLOT_LIVER))
+			if(!HAS_TRAIT_FROM(humantarget, TRAIT_LIVERLESS_METABOLISM, SPECIES_TRAIT) && !humantarget.get_organ_slot(ORGAN_SLOT_LIVER))
 				missing_organs += "liver"
-			if(the_dudes_species.mutantstomach && !humantarget.get_organ_slot(ORGAN_SLOT_STOMACH))
+			if(!HAS_TRAIT_FROM(humantarget, TRAIT_NOHUNGER, SPECIES_TRAIT) && !humantarget.get_organ_slot(ORGAN_SLOT_STOMACH))
 				missing_organs += "stomach"
-			if(the_dudes_species.mutanttongue && !humantarget.get_organ_slot(ORGAN_SLOT_TONGUE))
+			if(!humantarget.get_organ_slot(ORGAN_SLOT_TONGUE))
 				missing_organs += "tongue"
 			if(!humantarget.get_organ_slot(ORGAN_SLOT_EARS))
 				missing_organs += "ears"
@@ -350,8 +351,8 @@
 		render_list += "<span class='info ml-1'>[body_temperature_message]</span>\n"
 
 	// Time of death
-	if(target.tod && (target.stat == DEAD || ((HAS_TRAIT(target, TRAIT_FAKEDEATH)) && !advanced)))
-		render_list += "<span class='info ml-1'>Time of Death: [target.tod]</span>\n"
+	if(target.station_timestamp_timeofdeath && (target.stat == DEAD || ((HAS_TRAIT(target, TRAIT_FAKEDEATH)) && !advanced)))
+		render_list += "<span class='info ml-1'>Time of Death: [target.station_timestamp_timeofdeath]</span>\n"
 		var/tdelta = round(world.time - target.timeofdeath)
 		render_list += "<span class='alert ml-1'><b>Subject died [DisplayTimeText(tdelta)] ago.</b></span>\n"
 
@@ -397,9 +398,9 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/carbontarget = target
 		var/cyberimp_detect
-		for(var/obj/item/organ/internal/cyberimp/CI in carbontarget.organs)
-			if(CI.status == ORGAN_ROBOTIC && !(CI.organ_flags & ORGAN_HIDDEN))
-				cyberimp_detect += "[!cyberimp_detect ? "[CI.get_examine_string(user)]" : ", [CI.get_examine_string(user)]"]"
+		for(var/obj/item/organ/internal/cyberimp/cyberimp in carbontarget.organs)
+			if(IS_ROBOTIC_ORGAN(cyberimp) && !(cyberimp.organ_flags & ORGAN_HIDDEN))
+				cyberimp_detect += "[!cyberimp_detect ? "[cyberimp.get_examine_string(user)]" : ", [cyberimp.get_examine_string(user)]"]"
 		if(cyberimp_detect)
 			render_list += "<span class='notice ml-1'>Detected cybernetic modifications:</span>\n"
 			render_list += "<span class='notice ml-2'>[cyberimp_detect]</span>\n"
@@ -505,36 +506,39 @@
 #define AID_EMOTION_SAD "sad"
 
 /// Displays wounds with extended information on their status vs medscanners
-/proc/woundscan(mob/user, mob/living/carbon/patient, obj/item/healthanalyzer/simple/scanner)
+/proc/woundscan(mob/user, mob/living/carbon/patient, obj/item/healthanalyzer/scanner, simple_scan = FALSE)
 	if(!istype(patient) || user.incapacitated())
 		return
 
 	var/render_list = ""
-	var/advised
+	var/advised = FALSE
 	for(var/limb in patient.get_wounded_bodyparts())
 		var/obj/item/bodypart/wounded_part = limb
 		render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
 		for(var/limb_wound in wounded_part.wounds)
 			var/datum/wound/current_wound = limb_wound
-			render_list += "<div class='ml-2'>[current_wound.get_scanner_description()]</div>\n"
-			ADD_TRAIT(current_wound, TRAIT_WOUND_SCANNED, ANALYZER_TRAIT)
-			if(!advised)
-				to_chat(user, span_notice("You notice how bright holo-images appear over your [(length(wounded_part.wounds) || length(patient.get_wounded_bodyparts()) ) > 1 ? "various wounds" : "wound"]. They seem to be filled with helpful information, this should make treatment easier!"))
-				advised = TRUE
+			render_list += "<div class='ml-2'>[simple_scan ? current_wound.get_simple_scanner_description() : current_wound.get_scanner_description()]</div>\n"
+			if (scanner.give_wound_treatment_bonus)
+				ADD_TRAIT(current_wound, TRAIT_WOUND_SCANNED, ANALYZER_TRAIT)
+				if(!advised)
+					to_chat(user, span_notice("You notice how bright holo-images appear over your [(length(wounded_part.wounds) || length(patient.get_wounded_bodyparts()) ) > 1 ? "various wounds" : "wound"]. They seem to be filled with helpful information, this should make treatment easier!"))
+					advised = TRUE
 		render_list += "</span>"
 
 	if(render_list == "")
-		if(istype(scanner))
+		if(simple_scan)
+			var/obj/item/healthanalyzer/simple/simple_scanner = scanner
 			// Only emit the cheerful scanner message if this scan came from a scanner
-			playsound(scanner, 'sound/machines/ping.ogg', 50, FALSE)
-			to_chat(user, span_notice("\The [scanner] makes a happy ping and briefly displays a smiley face with several exclamation points! It's really excited to report that [patient] has no wounds!"))
-			scanner.show_emotion(AID_EMOTION_HAPPY)
-		else
-			to_chat(user, "<span class='notice ml-1'>No wounds detected in subject.</span>")
+			playsound(simple_scanner, 'sound/machines/ping.ogg', 50, FALSE)
+			to_chat(user, span_notice("\The [simple_scanner] makes a happy ping and briefly displays a smiley face with several exclamation points! It's really excited to report that [patient] has no wounds!"))
+			simple_scanner.show_emotion(AID_EMOTION_HAPPY)
+		to_chat(user, "<span class='notice ml-1'>No wounds detected in subject.</span>")
 	else
 		to_chat(user, examine_block(jointext(render_list, "")), type = MESSAGE_TYPE_INFO)
-		scanner.show_emotion(AID_EMOTION_WARN)
-		playsound(scanner, 'sound/machines/twobeep.ogg', 50, FALSE)
+		if(simple_scan)
+			var/obj/item/healthanalyzer/simple/simple_scanner = scanner
+			simple_scanner.show_emotion(AID_EMOTION_WARN)
+			playsound(simple_scanner, 'sound/machines/twobeep.ogg', 50, FALSE)
 
 
 /obj/item/healthanalyzer/simple
@@ -551,6 +555,7 @@
 			"reminds you that everyone is doing their best", "displays a message wishing you well", "displays a sincere thank-you for your interest in first-aid", "formally absolves you of all your sins")
 	// How often one can ask for encouragement
 	var/patience = 10 SECONDS
+	give_wound_treatment_bonus = TRUE
 
 /obj/item/healthanalyzer/simple/attack_self(mob/user)
 	if(next_encouragement < world.time)
@@ -591,7 +596,7 @@
 		show_emotion(AI_EMOTION_SAD)
 		return
 
-	woundscan(user, patient, src)
+	woundscan(user, patient, src, simple_scan = TRUE)
 	flick(icon_state + "_pinprick", src)
 
 /obj/item/healthanalyzer/simple/update_overlays()

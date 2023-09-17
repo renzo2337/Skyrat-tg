@@ -10,7 +10,8 @@
 	desc = "A pocket-sized non-lethal energy gun with low ammo capacity."
 	icon = 'modular_skyrat/modules/modular_weapons/icons/obj/guns/projectile.dmi'
 	icon_state = "cfa-disabler"
-	inhand_icon_state = null
+	righthand_file = 'modular_skyrat/modules/aesthetics/guns/icons/guns_righthand.dmi'
+	lefthand_file = 'modular_skyrat/modules/aesthetics/guns/icons/guns_lefthand.dmi'
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
 	ammo_x_offset = 2
 	w_class = WEIGHT_CLASS_SMALL
@@ -26,7 +27,6 @@
 
 /obj/item/gun/energy/disabler/bolt_disabler/add_seclight_point()
 	return
-
 /*
 *	CFA PHALANX
 *	Similar to the HoS's laser
@@ -38,6 +38,8 @@
 	desc = "Fires a disabling and lethal bouncing projectile, as well as a special muscle-seizing projectile that knocks targets down."
 	icon = 'modular_skyrat/modules/modular_weapons/icons/obj/guns/projectile.dmi'
 	icon_state = "phalanx1"
+	righthand_file = 'modular_skyrat/modules/aesthetics/guns/icons/guns_righthand.dmi'
+	lefthand_file = 'modular_skyrat/modules/aesthetics/guns/icons/guns_lefthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 10
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/bounce, /obj/item/ammo_casing/energy/laser/bounce, /obj/item/ammo_casing/energy/electrode/knockdown)
@@ -55,7 +57,6 @@
 *	CFA PALADIN
 *	Identical to a heavy laser.
 */
-
 
 /obj/item/gun/energy/laser/cfa_paladin
 	name = "\improper Mk.IV Paladin plasma carbine"
@@ -76,7 +77,6 @@
 *	BOUNCE DISABLER
 *	A disabler that will always ricochet.
 */
-
 
 /obj/item/ammo_casing/energy/disabler/bounce
 	projectile_type = /obj/projectile/beam/disabler/bounce
@@ -219,7 +219,7 @@
 	icon = 'modular_skyrat/modules/modular_weapons/icons/obj/ammo.dmi'
 	icon_state = "plasma_shell"
 	worn_icon_state = "shell"
-	caliber = "Beam Shell"
+	caliber = CALIBER_LASER
 	custom_materials = list(/datum/material/iron=SHEET_MATERIAL_AMOUNT * 2,/datum/material/plasma=HALF_SHEET_MATERIAL_AMOUNT)
 	projectile_type = /obj/projectile/beam/laser/single
 
@@ -228,7 +228,6 @@
 	desc = "A chemical mixture that once triggered, creates a deadly projectile, melting it's own casing in the process."
 	icon_state = "plasma_shell2"
 	worn_icon_state = "shell"
-	caliber = "Beam Shell"
 	custom_materials = list(/datum/material/iron=SHEET_MATERIAL_AMOUNT * 2,/datum/material/plasma=HALF_SHEET_MATERIAL_AMOUNT)
 	projectile_type = /obj/projectile/beam/laser/double
 
@@ -237,7 +236,6 @@
 	desc = "A chemical mixture that once triggered, creates a deadly bouncing projectile, melting it's own casing in the process."
 	icon_state = "bounce_shell"
 	worn_icon_state = "shell"
-	caliber = "Beam Shell"
 	custom_materials = list(/datum/material/iron=SHEET_MATERIAL_AMOUNT * 2,/datum/material/plasma=HALF_SHEET_MATERIAL_AMOUNT)
 	projectile_type = /obj/projectile/beam/laser/bounce
 

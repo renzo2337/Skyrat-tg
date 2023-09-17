@@ -118,7 +118,7 @@ GLOBAL_LIST_EMPTY(cached_mutant_icon_files)
 		if(DEFAULT_MATRIXED)
 			colors = list(features["mcolor"], features["mcolor2"], features["mcolor3"])
 		if(DEFAULT_SKIN_OR_PRIMARY)
-			if(pref_species && pref_species.use_skintones)
+			if(pref_species && !(TRAIT_USES_SKINTONES in pref_species.inherent_traits))
 				colors = list(features["skin_color"])
 			else
 				colors = list(features["mcolor"])
@@ -579,6 +579,9 @@ GLOBAL_LIST_EMPTY(cached_mutant_icon_files)
 /*
 	End of adding hides_breasts to TG stuff, start of adding has_digitigrade to TG stuff
 */
+/datum/sprite_accessory/underwear/male_briefs
+	has_digitigrade = TRUE
+
 /datum/sprite_accessory/underwear/male_boxers
 	has_digitigrade = TRUE
 
@@ -654,6 +657,12 @@ GLOBAL_LIST_EMPTY(cached_mutant_icon_files)
 	icon_state = "bra"
 	gender = FEMALE
 	use_static = null
+
+/datum/sprite_accessory/undershirt/hi_vis_bra
+	name = "Safekini"
+	icon_state = "hi_vis_bra"
+	gender = FEMALE
+	use_static = TRUE
 
 /datum/sprite_accessory/undershirt/bra_alt
 	name = "Bra - Alt"

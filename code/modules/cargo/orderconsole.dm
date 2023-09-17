@@ -62,12 +62,13 @@
 	else
 		return ..()
 
-/obj/machinery/computer/cargo/emag_act(mob/user)
+/obj/machinery/computer/cargo/emag_act(mob/user, obj/item/card/emag/emag_card)
 	if(obj_flags & EMAGGED)
-		return
+		return FALSE
 	if(user)
-		user.visible_message(span_warning("[user] swipes a suspicious card through [src]!"),
-		span_notice("You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
+		if (emag_card)
+			user.visible_message(span_warning("[user] swipes [emag_card] through [src]!"))
+		to_chat(user, span_notice("You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
 
 	obj_flags |= EMAGGED
 	contraband = TRUE
@@ -77,6 +78,7 @@
 	board.contraband = TRUE
 	board.obj_flags |= EMAGGED
 	update_static_data(user)
+	return TRUE
 
 /obj/machinery/computer/cargo/on_construction(mob/user)
 	. = ..()
@@ -272,11 +274,6 @@
 		if(order.applied_coupon)
 			say("Coupon refunded.")
 			order.applied_coupon.forceMove(get_turf(src))
-		//SKYRAT EDIT START
-		if(istype(order, /datum/supply_order/company_import))
-			var/datum/supply_order/company_import/the_order = order
-			the_order.reimburse_armament()
-		//SKYRAT EDIT END
 		SSshuttle.shopping_list -= order
 		. = TRUE
 		break
@@ -424,12 +421,6 @@
 		if("toggleprivate")
 			self_paid = !self_paid
 			. = TRUE
-		//SKYRAT EDIT START
-		if("company_import_window")
-			var/datum/component/armament/company_imports/company_import_component = GetComponent(/datum/component/armament/company_imports)
-			company_import_component.ui_interact(usr)
-			. = TRUE
-		//SKYRAT EDIT END
 	if(.)
 		post_signal(cargo_shuttle)
 

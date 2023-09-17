@@ -68,6 +68,7 @@
 
 /datum/orderable_item/mining/conscription_kit
 	item_path = /obj/item/storage/backpack/duffelbag/mining_conscript
+	desc = "A kit containing everything a crewmember needs to support a shaft miner in the field."
 	cost_per_order = 1500
 
 /datum/orderable_item/mining/capsule
@@ -102,19 +103,6 @@
 	item_path = /obj/item/style_meter
 	cost_per_order = 1500
 
-/datum/orderable_item/mining/MINEsuit
-	item_path = /obj/item/clothing/suit/armor/MINEsuit
-	cost_per_order = 2000
-
-/datum/orderable_item/mining/MINEhelmet
-	item_path = /obj/item/clothing/head/utility/MINEhelmet
-	cost_per_order = 500
-
-/datum/orderable_item/mining/EXPOsuit
-	item_path = /obj/item/clothing/suit/armor/EXPOsuit
-	cost_per_order = 2001
-
-/datum/orderable_item/mining/EXPOhelmet
-	item_path = /obj/item/clothing/head/utility/EXPOhelmet
-	cost_per_order = 501
-
+/datum/orderable_item/mining/weather_radio
+	item_path = /obj/item/radio/weather_monitor
+	cost_per_order = 400

@@ -44,7 +44,7 @@
 
 	var/list/autopsy_information = list()
 	autopsy_information += "[scanned.name] - Species: [scanned.dna.species.name]"
-	autopsy_information += "Time of Death - [scanned.tod]"
+	autopsy_information += "Time of Death - [scanned.station_timestamp_timeofdeath]"
 	autopsy_information += "Time of Autopsy - [station_time_timestamp()]"
 	autopsy_information += "Autopsy Coroner - [user.name]"
 
@@ -91,8 +91,8 @@
 			if(blood_id != /datum/reagent/blood)
 				var/datum/reagent/reagents = GLOB.chemical_reagents_list[blood_id]
 				blood_type = reagents ? reagents.name : blood_id
-				autopsy_information += "Blood Type: [blood_type]<br>"
-				autopsy_information += "Blood Volume: [scanned.blood_volume] cl ([blood_percent]) %<br>"
+			autopsy_information += "Blood Type: [blood_type]<br>"
+			autopsy_information += "Blood Volume: [scanned.blood_volume] cl ([blood_percent]%) <br>"
 
 	for(var/datum/disease/diseases as anything in scanned.diseases)
 		autopsy_information += "Name: [diseases.name] | Type: [diseases.spread_text]<br>"
