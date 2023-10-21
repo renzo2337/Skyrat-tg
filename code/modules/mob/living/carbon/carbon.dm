@@ -10,6 +10,7 @@
 		COMSIG_CARBON_DISARM_COLLIDE = PROC_REF(disarm_collision),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
+	ADD_TRAIT(src, TRAIT_CAN_HOLD_ITEMS, INNATE_TRAIT) // Carbons are assumed to be innately capable of having arms, we check their arms count instead
 
 /mob/living/carbon/Destroy()
 	//This must be done first, so the mob ghosts correctly before DNA etc is nulled
@@ -26,45 +27,6 @@
 	remove_from_all_data_huds()
 	QDEL_NULL(dna)
 	GLOB.carbon_list -= src
-
-/mob/living/carbon/perform_hand_swap(held_index)
-	. = ..()
-	if(!.)
-		return
-
-	if(!held_index)
-		held_index = (active_hand_index % held_items.len)+1
-
-	if(!isnum(held_index))
-		CRASH("You passed [held_index] into swap_hand instead of a number. WTF man")
-
-	var/oindex = active_hand_index
-	active_hand_index = held_index
-	if(hud_used)
-		var/atom/movable/screen/inventory/hand/H
-		H = hud_used.hand_slots["[oindex]"]
-		if(H)
-			H.update_appearance()
-		H = hud_used.hand_slots["[held_index]"]
-		if(H)
-			H.update_appearance()
-
-
-/mob/living/carbon/activate_hand(selhand) //l/r OR 1-held_items.len
-	if(!selhand)
-		selhand = (active_hand_index % held_items.len)+1
-
-	if(istext(selhand))
-		selhand = lowertext(selhand)
-		if(selhand == "right" || selhand == "r")
-			selhand = 2
-		if(selhand == "left" || selhand == "l")
-			selhand = 1
-
-	if(selhand != active_hand_index)
-		swap_hand(selhand)
-	else
-		mode() // Activate held item
 
 /mob/living/carbon/attackby(obj/item/item, mob/living/user, params)
 	if(!all_wounds || !(!user.combat_mode || user == src))
@@ -467,17 +429,18 @@
 
 	playsound(get_turf(src), 'sound/effects/splat.ogg', 50, TRUE)
 
+	var/need_mob_update = FALSE
 	var/turf/location = get_turf(src)
 	if(!blood)
 		adjust_nutrition(-lost_nutrition)
-		adjustToxLoss(-3)
+		need_mob_update += adjustToxLoss(-3, updating_health = FALSE)
 
 	for(var/i = 0 to distance)
 		if(blood)
 			if(location)
 				add_splatter_floor(location)
 			if(vomit_flags & MOB_VOMIT_HARM)
-				adjustBruteLoss(3)
+				need_mob_update += adjustBruteLoss(3, updating_health = FALSE)
 		else
 			if(location)
 				location.add_vomit_floor(src, vomit_type, vomit_flags, purge_ratio) // call purge when doing detoxicfication to pump more chems out of the stomach.
@@ -485,6 +448,8 @@
 		location = get_step(location, starting_dir)
 		if (location?.is_blocked_turf())
 			break
+	if(need_mob_update) // so we only have to call updatehealth() once as opposed to n times
+		updatehealth()
 
 	return TRUE
 
@@ -1461,27 +1426,3 @@
 	our_splatter.blood_dna_info = get_blood_dna_list()
 	var/turf/targ = get_ranged_target_turf(src, splatter_direction, splatter_strength)
 	our_splatter.fly_towards(targ, splatter_strength)
-
-/mob/living/carbon/update_fire_overlay(stacks, on_fire, last_icon_state, suffix = "")
-	var/fire_icon = "generic_burning[suffix]"
-
-	if(!GLOB.fire_appearances[fire_icon])
-		var/mutable_appearance/new_fire_overlay = mutable_appearance('icons/mob/effects/onfire.dmi', fire_icon, -FIRE_LAYER)
-		new_fire_overlay.appearance_flags = RESET_COLOR
-		GLOB.fire_appearances[fire_icon] = new_fire_overlay
-
-	if((stacks > 0 && on_fire) || HAS_TRAIT(src, TRAIT_PERMANENTLY_ONFIRE))
-		if(fire_icon == last_icon_state)
-			return last_icon_state
-
-		remove_overlay(FIRE_LAYER)
-		overlays_standing[FIRE_LAYER] = GLOB.fire_appearances[fire_icon]
-		apply_overlay(FIRE_LAYER)
-		return fire_icon
-
-	if(!last_icon_state)
-		return last_icon_state
-
-	remove_overlay(FIRE_LAYER)
-	apply_overlay(FIRE_LAYER)
-	return null
