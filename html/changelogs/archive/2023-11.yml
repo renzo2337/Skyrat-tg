@@ -773,6 +773,22 @@
   - bugfix: Turbine parts will now use an amount of materials no greater than needed
       for the upgrade
 2023-11-18:
+  DanaDririon:
+  - rscadd: Agrega las orejas de goat para jiyii
+  Deek-Za:
+  - image: New Digitigrade icons for red sec officer and HoS uniforms.
+  LT3:
+  - bugfix: Tram will no longer electrocute innocent, law abiding crew trying to use
+      the crosswalk when there's no tram in sight
+  Melbert:
+  - refactor: Refactored another large chuck of attack code, primarily involving melee
+      item attacks and non-human mob attacks. Report if you see anything weird
+  - bugfix: Pacifists clicking on simple robots or silicons no longer causes sparks
+  - bugfix: Blocked thrown batons are now properly... blocked
+  - bugfix: Plates now respect the weight class of items on top.
+  - bugfix: Fried items now respect existing volume cap.
+  - bugfix: Smartfridges now don't accept bulky food items, good thing we have none
+      of those right guys?
   SkyratBot:
   - refactor: Secure briefcases are now actual briefcases.
   - refactor: Wall safes are now structures, rather than items that can't be picked
