@@ -21,7 +21,7 @@
 	. = ..()
 
 	. += "The Eu-K508 S 'Einhorn' Revolver its a short-barreled double-action \
-		6-shot revolver that fires 12mm high-power ammo.High recoil, strong knockback. \
+		6-shot revolver that fires 12mm high-power ammo. High recoil, strong knockback. \
 		Manufactured by AEON and used as the main weapon in the STAR security forces of the imperial forces."
 
 	return .
