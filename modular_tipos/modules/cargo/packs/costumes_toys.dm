@@ -1,7 +1,7 @@
 
 // Pack de Cargo - Figuras Los Tipos
 
-datum/supply_pack/costumes_toys/tipos
+/datum/supply_pack/costumes_toys/tipos
 	name = "Caja de figuras"
 	desc = "Contiene una gran variedad de muñecos de edición limitada Los Tipos."
 	cost = CARGO_CRATE_VALUE * 10
@@ -36,14 +36,14 @@ datum/supply_pack/costumes_toys/tipos
 		/obj/item/toy/figure/tipos/connor = 1,
 		/obj/item/toy/figure/tipos/blue = 1,
 		/obj/item/toy/figure/tipos/white = 1,
-		/obj/item/toy/figure/tipos/yellow = 1,
+		/obj/item/toy/figure/tipos/yellow = 1
 	)
 	crate_name = "caja de figuras"
 	crate_type = /obj/structure/closet/crate/wooden
 
 // Pack de Cargo - Figuras Manaos
 
-datum/supply_pack/costumes_toys/manaos
+/datum/supply_pack/costumes_toys/manaos
 	name = "Caja de figuras descontinuadas"
 	desc = "Contiene una gran variedad de muñecos descontinuadiso de edición Manaos."
 	cost = CARGO_CRATE_VALUE * 3
@@ -68,7 +68,7 @@ datum/supply_pack/costumes_toys/manaos
 		/obj/item/toy/figure/manaos/area = 1,
 		/obj/item/toy/figure/manaos/vlad = 1,
 		/obj/item/toy/figure/manaos/franco = 1,
-		/obj/item/toy/figure/manaos/sam = 1,
+		/obj/item/toy/figure/manaos/sam = 1
 	)
 	crate_name = "caja de figuras descontinuadas"
 	crate_type = /obj/structure/closet/crate/wooden
