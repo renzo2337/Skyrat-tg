@@ -4,9 +4,9 @@
 	name = "\improper Eu-K508 S 'Einhorn' Revolver"
 	desc = "A short-barreled double-action 6-shot revolver that fires 12x40mm ammo. High recoil, strong knockback."
 
-	icon = 'modular_tipos/modules/modular_weapons/icons/obj/company_and_or_faction_based/AEON_sierpinski/revolver.dmi'
-	icon_state = "r_sierpinski"
-	fire_sound = 'modular_skyrat/modules/modular_weapons/sounds/revolver_heavy.ogg'
+	icon = 'modular_tipos/modules/modular_weapons/icons/obj/company_and_or_faction_based/aeon_sierpinski/sig_handguns.dmi'
+	icon_state = "sig_rev"
+	fire_sound = 'modular_tipos/modules/modular_weapons/sounds/signalis_revolver.ogg'
 
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/cylinder/s12mm
 
@@ -35,19 +35,11 @@
 /obj/item/ammo_casing/s12mm
 	name = "12x40mm lethal bullet casing"
 	desc = "Old Imperially-produced 12x40mm hollow-point bullets. Deform and fracture on impact for immense impact power."
-
-	icon = 'modular_tipos/modules/modular_weapons/icons/obj/company_and_or_faction_based/AEON_sierpinski/revolver.dmi'
+	icon = 'modular_tipos/modules/modular_weapons/icons/obj/company_and_or_faction_based/aeon_sierpinski/sig_ammo.dmi'
 	icon_state = "12mm"
 
 	caliber = CALIBER_S12MM
 	projectile_type = /obj/projectile/bullet/s12mm
-
-
-/obj/item/ammo_casing/s12mm/Initialize(mapload)
-	. = ..()
-
-	AddElement(/datum/element/caseless)
-
 
 /obj/projectile/bullet/s12mm
 	name = "12x40mm Short bullet"
@@ -61,7 +53,7 @@
 	name = "ammo box (12x40mm Short lethal)"
 	desc = "A box of 12x40mm rounds, holds twenty-four rounds."
 
-	icon = 'modular_tipos/modules/modular_weapons/icons/obj/company_and_or_faction_based/AEON_sierpinski/revolver.dmi'
+	icon = 'modular_tipos/modules/modular_weapons/icons/obj/company_and_or_faction_based/aeon_sierpinski/sig_ammo.dmi'
 	icon_state = "12mm_box"
 
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
@@ -71,42 +63,6 @@
 	caliber = CALIBER_S12MM
 	ammo_type = /obj/item/ammo_casing/s12mm
 	max_ammo = 24
-
-
-// 12x40mm's equivalent to a rubber bullet
-
-/obj/item/ammo_casing/s12mm/incapacitator
-	name = "12x40mm Short incapacitator bullet casing"
-	desc = "A old Imperially-produced 12x40mm standard caseless less-lethal revolver round. Exhausts targets on hit, has a tendency to bounce off walls at shallow angles."
-
-	icon_state = "12mm_disabler"
-
-	projectile_type = /obj/projectile/bullet/s12mm/incapacitator
-	harmful = FALSE
-
-
-/obj/projectile/bullet/s12mm/incapacitator
-	name = "12x40mm Short incapacitator bullet"
-	damage = 10
-	stamina = 35
-
-	wound_bonus = -40
-	bare_wound_bonus = -20
-
-	weak_against_armour = TRUE
-
-	shrapnel_type = null
-	sharpness = NONE
-	embedding = null
-
-
-/obj/item/ammo_box/s12mm/incapacitator
-	name = "ammo box (12x40mm Short incapacitator)"
-	desc = "A box of .12x40mm Short rounds, holds twenty-four rounds. The blue stripe indicates this should hold less-lethal ammunition."
-
-	icon_state = "12mm_box_disabler"
-
-	ammo_type = /obj/item/ammo_casing/s12mm/incapacitator
 
 // Eu-K508 S 'Einhorn' Revolver Magazine
 
@@ -125,7 +81,3 @@
 
 /datum/armament_entry/company_import/vitezstvi/ammo_boxes/s12mm
 	item_type = /obj/item/ammo_box/s12mm
-
-/datum/armament_entry/company_import/vitezstvi/ammo_boxes/s12mm_disabler
-	item_type = /obj/item/ammo_box/s12mm/incapacitator
-
