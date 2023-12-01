@@ -80,7 +80,7 @@
 
 // BW-5 Nitro Express Rifle Magazine
 
-/obj/item/ammo_box/magazine/internal/shot/s16
+/obj/item/ammo_box/magazine/internal/shot/s16mm
 	ammo_type = /obj/item/ammo_casing/s16mm
 	caliber = CALIBER_S16MM
 	max_ammo = 2
