@@ -22,29 +22,29 @@
 	subcategory = "Replika repair equipment"
 
 /datum/armament_entry/company_import/sierpinski/repair/kit
-	name = "Replika repair kit"
+	name = "Replika repair container kit (empty)"
 	item_type = /obj/item/storage/medkit/sierpinski
-	cost = PAYCHECK_CREW * 5
+	cost = PAYCHECK_COMMAND * 5
 
 /datum/armament_entry/company_import/sierpinski/repair/patch
 	name = "Replika repair patch"
 	item_type = /obj/item/reagent_containers/hypospray/sierpinski/patch
-	cost = PAYCHECK_CREW * 2
+	cost = PAYCHECK_COMMAND * 2
 
 /datum/armament_entry/company_import/sierpinski/repair/spray
 	name = "Replika repair spray"
 	item_type = /obj/item/reagent_containers/hypospray/sierpinski/spray
-	cost = PAYCHECK_CREW * 3
+	cost = PAYCHECK_COMMAND * 3
 
 /datum/armament_entry/company_import/sierpinski/repair/spray_plus
 	name = "Replika repair spray+"
 	item_type = /obj/item/reagent_containers/hypospray/sierpinski/spray_plus
-	cost = PAYCHECK_CREW * 5
+	cost = PAYCHECK_COMMAND * 5
 
 /datum/armament_entry/company_import/sierpinski/repair/autoinjector
 	name = "Replika autoinjector"
 	item_type = /obj/item/reagent_containers/hypospray/sierpinski/autoinjector
-	cost = PAYCHECK_CREW * 7
+	cost = PAYCHECK_COMMAND * 7
 
 // Weapons
 
@@ -66,8 +66,10 @@ datum/armament_entry/company_import/sierpinski/ammo
 	subcategory = "Sierpinski ammunition"
 
 /datum/armament_entry/company_import/sierpinski/ammo/s12mm
+	name = "Ammo box (12x40mm Short Letal)"
 	item_type = /obj/item/ammo_box/s12mm
 
 /datum/armament_entry/company_import/sierpinski/ammo/s16mm
+	name = "Ammo box (16x80mm Armor-Piercing)"
 	item_type = /obj/item/ammo_box/s16mm
 	cost = PAYCHECK_COMMAND * 5

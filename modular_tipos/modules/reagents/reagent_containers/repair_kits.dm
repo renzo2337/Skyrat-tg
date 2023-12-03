@@ -1,10 +1,16 @@
+// Nanite Slurry based repair foam
+
 /datum/reagent/medicine/nanite_slurry/sierpinski
 	overdose_threshold = null
+	metabolization_rate = 2 * REAGENTS_METABOLISM
+	healing = 3
+
+// Sierpinski Repair Tools
 
 /obj/item/reagent_containers/hypospray/sierpinski
 	icon = 'modular_tipos/modules/reagents/reagent_containers/repair_kits.dmi'
 	righthand_file = 'modular_tipos/modules/reagents/reagent_containers/repair_kits_righthand.dmi'
-	lefthand_file = 'modular_tipos/modules/reagents/reagent_containers/repair_kits_righthand.dmi'
+	lefthand_file = 'modular_tipos/modules/reagents/reagent_containers/repair_kits_lefthand.dmi'
 	has_variable_transfer_amount = FALSE
 	ignore_flags = 1
 	reagent_flags = DRAWABLE
@@ -23,10 +29,6 @@
 /obj/item/reagent_containers/hypospray/sierpinski/attack_self(mob/user)
 	if(user.can_perform_action(src, FORBID_TELEKINESIS_REACH|ALLOW_RESTING))
 		inject(user, user)
-
-/obj/item/reagent_containers/hypospray/sierpinski/update_icon_state()
-	icon_state = "[base_icon_state][(reagents.total_volume > 0) ? null : 0]"
-	return ..()
 
 /obj/item/reagent_containers/hypospray/sierpinski/Initialize(mapload)
 	. = ..()
@@ -77,6 +79,8 @@
 	volume = 50
 	list_reagents = list(/datum/reagent/medicine/nanite_slurry/sierpinski = 50)
 
+// Replika Repair kit container (empty)
+
 /obj/item/storage/medkit/sierpinski
 	name = "replika repair kit"
 	desc = "It's an emergency repair kit for synthetic units."
@@ -85,8 +89,9 @@
 	icon = 'modular_tipos/modules/reagents/reagent_containers/repair_kits.dmi'
 	righthand_file = 'modular_tipos/modules/reagents/reagent_containers/repair_kits_righthand.dmi'
 	lefthand_file = 'modular_tipos/modules/reagents/reagent_containers/repair_kits_righthand.dmi'
-	atom_storage.max_slots = 8
+
+/obj/item/storage/medkit/sierpinski/Initialize(mapload)
+	. = ..()
 	atom_storage.max_total_storage = 16
-	atom_storage.set_holdable(list(
-	/obj/item/reagent_containers/hypospray/sierpinski
-		))
+	atom_storage.max_slots = 8
+	atom_storage.can_hold = typecacheof(list(/obj/item/reagent_containers/hypospray/sierpinski/patch, /obj/item/reagent_containers/hypospray/sierpinski/spray, /obj/item/reagent_containers/hypospray/sierpinski/spray_plus, /obj/item/reagent_containers/hypospray/sierpinski/autoinjector))
