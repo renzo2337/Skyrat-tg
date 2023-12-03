@@ -14,7 +14,7 @@
 
 /datum/armament_entry/company_import/sierpinski
 	category = SIERPINSKI_EQUIPMENT_NAME
-	company_bitflag = CARGO_COMPANY_SOL_DEFENSE
+	company_bitflag = CARGO_COMPANY_SIERPINSKI_EQUIPMENT
 
 // Repair meds
 
