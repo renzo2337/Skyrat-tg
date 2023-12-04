@@ -19,7 +19,7 @@
 /obj/item/reagent_containers/hypospray/medipen/sierpinski/patch
 	name = "repair patch"
 	desc = "A sealed, single-use adhesive patch containing a coagulation agent to patch up damaged areas. Restores a small amount of health over time."
-	icon_state = "rep_patch"
+	base_icon_state = "rep_patch"
 	inhand_icon_state = "rep_patch"
 	amount_per_transfer_from_this = 10
 	volume = 10
@@ -28,7 +28,7 @@
 /obj/item/reagent_containers/hypospray/medipen/sierpinski/spray
 	name = "repair spray"
 	desc = "A single-use spray gun to fill damaged areas with polyurethane-based expanding foam. Restores a large amount of health over time."
-	icon_state = "rep_spray"
+	base_icon_state = "rep_spray"
 	inhand_icon_state = "rep_spray"
 	amount_per_transfer_from_this = 20
 	volume = 20
@@ -37,7 +37,7 @@
 /obj/item/reagent_containers/hypospray/medipen/sierpinski/spray_plus
 	name = "repair spray+"
 	desc = "A single-use spray gun to fill damaged areas with fast-curing polyurethane-based foam. Restores a medium amount of health instantly."
-	icon_state = "rep_spray_plus"
+	base_icon_state = "rep_spray_plus"
 	inhand_icon_state = "rep_spray_plus"
 	amount_per_transfer_from_this = 30
 	volume = 30
@@ -46,7 +46,7 @@
 /obj/item/reagent_containers/hypospray/medipen/sierpinski/autoinjector
 	name = "autoinjector"
 	desc = "Autoinjector Syringe filled with REPLIKA-KLStim-N stimulant. Quick and easy to use."
-	icon_state = "rep_auto"
+	base_icon_state = "rep_auto"
 	inhand_icon_state = "rep_auto"
 	amount_per_transfer_from_this = 45
 	volume = 45
