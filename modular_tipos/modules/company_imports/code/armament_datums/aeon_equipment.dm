@@ -22,28 +22,28 @@
 	subcategory = "Replika repair equipment"
 
 /datum/armament_entry/company_import/sierpinski/repair/kit
-	name = "Replika repair container kit (empty)"
+	name = "Replika repair container kit"
 	item_type = /obj/item/storage/medkit/sierpinski
-	cost = PAYCHECK_COMMAND * 5
+	cost = PAYCHECK_COMMAND * 10
 
 /datum/armament_entry/company_import/sierpinski/repair/patch
 	name = "Replika repair patch"
-	item_type = /obj/item/reagent_containers/hypospray/sierpinski/patch
+	item_type = /obj/item/reagent_containers/hypospray/medipen/sierpinski/patch
 	cost = PAYCHECK_COMMAND * 2
 
 /datum/armament_entry/company_import/sierpinski/repair/spray
 	name = "Replika repair spray"
-	item_type = /obj/item/reagent_containers/hypospray/sierpinski/spray
+	item_type = /obj/item/reagent_containers/hypospray/medipen/sierpinski/spray
 	cost = PAYCHECK_COMMAND * 3
 
 /datum/armament_entry/company_import/sierpinski/repair/spray_plus
 	name = "Replika repair spray+"
-	item_type = /obj/item/reagent_containers/hypospray/sierpinski/spray_plus
+	item_type = /obj/item/reagent_containers/hypospray/medipen/sierpinski/spray_plus
 	cost = PAYCHECK_COMMAND * 5
 
 /datum/armament_entry/company_import/sierpinski/repair/autoinjector
 	name = "Replika autoinjector"
-	item_type = /obj/item/reagent_containers/hypospray/sierpinski/autoinjector
+	item_type = /obj/item/reagent_containers/hypospray/medipen/sierpinski/autoinjector
 	cost = PAYCHECK_COMMAND * 7
 
 // Weapons
