@@ -48,36 +48,36 @@
 	desc = "A sealed, single-use adhesive patch containing a coagulation agent to patch up damaged areas. Restores a small amount of health over time."
 	icon_state = "rep_patch"
 	inhand_icon_state = "rep_patch"
-	amount_per_transfer_from_this = 15
-	volume = 15
-	list_reagents = list(/datum/reagent/medicine/nanite_slurry/sierpinski = 15)
+	amount_per_transfer_from_this = 10
+	volume = 10
+	list_reagents = list(/datum/reagent/medicine/nanite_slurry/sierpinski = 10)
 
 /obj/item/reagent_containers/hypospray/sierpinski/spray
 	name = "repair spray"
 	desc = "A single-use spray gun to fill damaged areas with polyurethane-based expanding foam. Restores a large amount of health over time."
 	icon_state = "rep_spray"
 	inhand_icon_state = "rep_spray"
-	amount_per_transfer_from_this = 25
-	volume = 25
-	list_reagents = list(/datum/reagent/medicine/nanite_slurry/sierpinski = 25)
+	amount_per_transfer_from_this = 20
+	volume = 20
+	list_reagents = list(/datum/reagent/medicine/nanite_slurry/sierpinski = 20)
 
 /obj/item/reagent_containers/hypospray/sierpinski/spray_plus
 	name = "repair spray+"
 	desc = "A single-use spray gun to fill damaged areas with fast-curing polyurethane-based foam. Restores a medium amount of health instantly."
 	icon_state = "rep_spray_plus"
 	inhand_icon_state = "rep_spray_plus"
-	amount_per_transfer_from_this = 35
-	volume = 35
-	list_reagents = list(/datum/reagent/medicine/nanite_slurry/sierpinski = 35)
+	amount_per_transfer_from_this = 30
+	volume = 30
+	list_reagents = list(/datum/reagent/medicine/nanite_slurry/sierpinski = 30)
 
 /obj/item/reagent_containers/hypospray/sierpinski/autoinjector
 	name = "autoinjector"
 	desc = "Autoinjector Syringe filled with REPLIKA-KLStim-N stimulant. Quick and easy to use."
 	icon_state = "rep_auto"
 	inhand_icon_state = "rep_auto"
-	amount_per_transfer_from_this = 50
-	volume = 50
-	list_reagents = list(/datum/reagent/medicine/nanite_slurry/sierpinski = 50)
+	amount_per_transfer_from_this = 45
+	volume = 45
+	list_reagents = list(/datum/reagent/medicine/nanite_slurry/sierpinski = 45)
 
 // Replika Repair kit container (empty)
 
