@@ -95,3 +95,11 @@
 	atom_storage.max_total_storage = 16
 	atom_storage.max_slots = 8
 	atom_storage.can_hold = typecacheof(list(/obj/item/reagent_containers/hypospray/sierpinski/patch, /obj/item/reagent_containers/hypospray/sierpinski/spray, /obj/item/reagent_containers/hypospray/sierpinski/spray_plus, /obj/item/reagent_containers/hypospray/sierpinski/autoinjector))
+
+/obj/item/storage/medkit/sierpinski/PopulateContents()
+	generate_items_inside(list(
+		/obj/item/reagent_containers/hypospray/sierpinski/patch = 3,
+		/obj/item/reagent_containers/hypospray/sierpinski/spray = 2,
+		/obj/item/reagent_containers/hypospray/sierpinski/spray_plus = 2,
+		/obj/item/reagent_containers/hypospray/sierpinski/autoinjector = 1,
+	),src)
