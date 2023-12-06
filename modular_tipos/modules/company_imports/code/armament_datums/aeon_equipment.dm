@@ -1,8 +1,8 @@
 
-#define SIERPINSKI_EQUIPMENT_NAME "AEON Equipment"
+#define SIERPINSKI_EQUIPMENT_NAME "AEON Industries Replika Equipment"
 #define CARGO_COMPANY_SIERPINSKI_EQUIPMENT (1<<10)
 
-// AEON Industries equipment
+// AEON Industries Replika Equipment
 
 /datum/cargo_company/sierpinski
 	name = SIERPINSKI_EQUIPMENT_NAME
@@ -22,14 +22,14 @@
 	subcategory = "Replika repair equipment"
 
 /datum/armament_entry/company_import/sierpinski/repair/kit
-	name = "Replika repair container kit"
+	name = "Replika repair toolkit"
 	item_type = /obj/item/storage/medkit/sierpinski
 	cost = PAYCHECK_COMMAND * 10
 
 /datum/armament_entry/company_import/sierpinski/repair/patch
 	name = "Replika repair patch"
-	item_type = /obj/item/reagent_containers/hypospray/medipen/sierpinski/patch
-	cost = PAYCHECK_COMMAND * 2
+	item_type = /obj/item/stack/medical/sierpinski/patch
+	cost = PAYCHECK_COMMAND * 3
 
 /datum/armament_entry/company_import/sierpinski/repair/spray
 	name = "Replika repair spray"
