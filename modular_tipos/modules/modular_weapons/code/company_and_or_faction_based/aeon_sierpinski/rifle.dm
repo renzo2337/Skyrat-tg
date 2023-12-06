@@ -85,16 +85,3 @@
 	caliber = CALIBER_S16MM
 	max_ammo = 2
 	multiload = FALSE
-
-// Company Imports - // BW-5 Nitro Express Rifle
-
-/datum/armament_entry/company_import/sol_defense/longarm/sierpinski
-	item_type = /obj/item/gun/ballistic/rifle/sierpinski
-	cost = PAYCHECK_COMMAND * 12
-	restricted = TRUE
-
-// Company Imports - 12x40mm ammo
-
-/datum/armament_entry/company_import/vitezstvi/ammo_boxes/s16mm
-	item_type = /obj/item/ammo_box/s16mm
-	cost = PAYCHECK_COMMAND * 5

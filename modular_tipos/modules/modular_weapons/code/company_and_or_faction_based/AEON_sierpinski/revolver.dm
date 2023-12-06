@@ -70,14 +70,3 @@
 	ammo_type = /obj/item/ammo_casing/s12mm
 	caliber = CALIBER_S12MM
 	max_ammo = 6
-
-// Company Imports - Eu-K508 S 'Einhorn' Revolver
-
-/datum/armament_entry/company_import/sol_defense/sidearm/sierpinski
-	item_type = /obj/item/gun/ballistic/revolver/sierpinski
-	cost = PAYCHECK_COMMAND * 6
-
-// Company Imports - 12x40mm ammo
-
-/datum/armament_entry/company_import/vitezstvi/ammo_boxes/s12mm
-	item_type = /obj/item/ammo_box/s12mm
