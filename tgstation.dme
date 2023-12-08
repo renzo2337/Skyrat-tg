@@ -8025,6 +8025,7 @@
 #include "modular_tipos\master_files\code\game\objects\items\storage\backpack.dm"
 #include "modular_tipos\modules\altborgs\code\robot_modules.dm"
 #include "modular_tipos\modules\cargo\packs\costumes_toys.dm"
+#include "modular_tipos\modules\clothing\suits\armor.dm"
 #include "modular_tipos\modules\company_imports\code\armament_datums\aeon_equipment.dm"
 #include "modular_tipos\modules\customization\modules\mob\dead\new_player\sprite_accesories\ears.dm"
 #include "modular_tipos\modules\loadout\loadout_items\loadout_datum.dm"

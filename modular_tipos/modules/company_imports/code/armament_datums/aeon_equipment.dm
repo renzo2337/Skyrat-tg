@@ -46,6 +46,16 @@
 	item_type = /obj/item/reagent_containers/hypospray/medipen/sierpinski/autoinjector
 	cost = PAYCHECK_COMMAND * 7
 
+// Armor
+
+datum/armament_entry/company_import/sierpinski/armor
+	subcategory = "Sierpinski Armor"
+
+/datum/armament_entry/company_import/sierpinski/armor/black
+	name = "AEON replika armor"
+	item_type = /obj/item/clothing/suit/armor/vest/sierpinski
+	cost = PAYCHECK_COMMAND * 3
+
 // Weapons
 
 datum/armament_entry/company_import/sierpinski/weapons
