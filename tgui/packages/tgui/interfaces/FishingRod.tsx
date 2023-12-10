@@ -2,6 +2,11 @@ import { useBackend } from '../backend';
 import { Window } from '../layouts';
 import { Box, Stack, Button, Section, Flex } from '../components';
 
+type Quality = {
+  name: string;
+  kind: 'good' | 'neutral' | 'medium';
+};
+
 type FishingRodData = {
   bait_name: string;
   bait_icon: string;
@@ -29,8 +34,9 @@ const FishingRodSlot = (props: FishingSlotProps) => {
       height="64px"
       src={`data:image/jpeg;base64,${icon}`}
       style={{
-        verticalAlign: 'middle',
-        objectFit: 'cover',
+        '-ms-interpolation-mode': 'nearest-neighbor',
+        'vertical-align': 'middle',
+        'object-fit': 'cover',
       }}
     />
   );
@@ -41,8 +47,7 @@ const FishingRodSlot = (props: FishingSlotProps) => {
         <Stack.Item grow>
           <Button
             fluid
-            onClick={() => act('slot_action', { slot: props.slot })}
-          >
+            onClick={() => act('slot_action', { slot: props.slot })}>
             <Flex>
               <Flex.Item>
                 {!!props.current_item_icon &&
@@ -62,10 +67,10 @@ const FishingRodSlot = (props: FishingSlotProps) => {
 };
 
 export const FishingRod = (props) => {
-  const { data } = useBackend<FishingRodData>();
+  const { act, data } = useBackend<FishingRodData>();
 
   return (
-    <Window height={300} width={300}>
+    <Window>
       <Window.Content>
         <Section>
           <FishingRodSlot

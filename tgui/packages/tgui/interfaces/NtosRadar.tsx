@@ -43,17 +43,16 @@ export const NtosRadarContent = (props) => {
       </Stack.Item>
       <Stack.Item
         style={{
-          backgroundImage:
+          'background-image':
             'url("' + resolveAsset('ntosradarbackground.png') + '")',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          top: '20px',
+          'background-position': 'center',
+          'background-repeat': 'no-repeat',
+          'top': '20px',
         }}
         position="relative"
         m={1.5}
         width={45}
-        height={45}
-      >
+        height={45}>
         <TargetDisplay />
       </Stack.Item>
     </Stack>
@@ -92,8 +91,7 @@ const ObjectDisplay = (props) => {
                 act('selecttarget', {
                   ref: object.ref,
                 });
-              }}
-            >
+              }}>
               {object.name}
             </div>
           ))}
@@ -118,8 +116,7 @@ const TargetDisplay = (props) => {
         left={1.35}
         width={42}
         fontSize="30px"
-        textAlign="center"
-      >
+        textAlign="center">
         Signal Lost
       </NoticeBox>
     );
@@ -132,7 +129,7 @@ const TargetDisplay = (props) => {
       top="20px"
       left="243px"
       style={{
-        transform: `rotate(${target.rot}deg)`,
+        'transform': `rotate(${target.rot}deg)`,
       }}
     />
   ) : (

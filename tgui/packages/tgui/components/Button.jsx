@@ -5,11 +5,14 @@
  */
 
 import { KEY_ENTER, KEY_ESCAPE, KEY_SPACE } from 'common/keycodes';
-import { classes } from 'common/react';
-import { Component, createRef } from 'react';
+import { classes, pureComponentHooks } from 'common/react';
+import { Component, createRef } from 'inferno';
+import { createLogger } from '../logging';
 import { Box, computeBoxClassName, computeBoxProps } from './Box';
 import { Icon } from './Icon';
 import { Tooltip } from './Tooltip';
+
+const logger = createLogger('Button');
 
 export const Button = (props) => {
   const {
@@ -30,18 +33,30 @@ export const Button = (props) => {
     circular,
     content,
     children,
+    onclick,
     onClick,
     verticalAlignContent,
     ...rest
   } = props;
   const hasContent = !!(content || children);
-
+  // A warning about the lowercase onclick
+  if (onclick) {
+    logger.warn(
+      `Lowercase 'onclick' is not supported on Button and lowercase` +
+        ` prop names are discouraged in general. Please use a camelCase` +
+        `'onClick' instead and read: ` +
+        `https://infernojs.org/docs/guides/event-handling`
+    );
+  }
   rest.onClick = (e) => {
     if (!disabled && onClick) {
       onClick(e);
     }
   };
-
+  // IE8: Use "unselectable" because "user-select" doesn't work.
+  if (Byond.IS_LTE_IE8) {
+    rest.unselectable = true;
+  }
   let buttonContent = (
     <div
       className={classes([
@@ -84,8 +99,7 @@ export const Button = (props) => {
           return;
         }
       }}
-      {...computeBoxProps(rest)}
-    >
+      {...computeBoxProps(rest)}>
       <div className="Button__content">
         {icon && iconPosition !== 'right' && (
           <Icon
@@ -120,6 +134,8 @@ export const Button = (props) => {
   return buttonContent;
 };
 
+Button.defaultHooks = pureComponentHooks;
+
 export const ButtonCheckbox = (props) => {
   const { checked, ...rest } = props;
   return (
@@ -135,8 +151,8 @@ export const ButtonCheckbox = (props) => {
 Button.Checkbox = ButtonCheckbox;
 
 export class ButtonConfirm extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       clickedOnce: false,
     };
@@ -186,8 +202,8 @@ export class ButtonConfirm extends Component {
 Button.Confirm = ButtonConfirm;
 
 export class ButtonInput extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.inputRef = createRef();
     this.state = {
       inInput: false,
@@ -249,16 +265,15 @@ export class ButtonInput extends Component {
           'Button--color--' + color,
         ])}
         {...rest}
-        onClick={() => this.setInInput(true)}
-      >
+        onClick={() => this.setInInput(true)}>
         {icon && <Icon name={icon} rotation={iconRotation} spin={iconSpin} />}
         <div>{content}</div>
         <input
           ref={this.inputRef}
           className="NumberInput__input"
           style={{
-            display: !this.state.inInput ? 'none' : '',
-            textAlign: 'left',
+            'display': !this.state.inInput ? 'none' : undefined,
+            'text-align': 'left',
           }}
           onBlur={(e) => {
             if (!this.state.inInput) {
@@ -296,8 +311,8 @@ export class ButtonInput extends Component {
 Button.Input = ButtonInput;
 
 export class ButtonFile extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.inputRef = createRef();
   }
 

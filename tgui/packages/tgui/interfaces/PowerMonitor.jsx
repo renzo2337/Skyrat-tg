@@ -1,21 +1,9 @@
 import { map, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
+import { pureComponentHooks } from 'common/react';
 import { useBackend, useLocalState } from '../backend';
-import {
-  Box,
-  Button,
-  Chart,
-  ColorBox,
-  Flex,
-  Icon,
-  LabeledList,
-  ProgressBar,
-  Section,
-  Table,
-  Dimmer,
-  Stack,
-} from '../components';
+import { Box, Button, Chart, ColorBox, Flex, Icon, LabeledList, ProgressBar, Section, Table, Dimmer, Stack } from '../components';
 import { Window } from '../layouts';
 
 const PEAK_DRAW = 500000;
@@ -56,7 +44,7 @@ export const PowerMonitorContent = (props) => {
     sortByField === 'draw' &&
       sortBy(
         (area) => -powerRank(area.load),
-        (area) => -parseFloat(area.load),
+        (area) => -parseFloat(area.load)
       ),
   ])(data.areas);
   return (
@@ -82,8 +70,7 @@ export const PowerMonitorContent = (props) => {
                   value={supply}
                   minValue={0}
                   maxValue={maxValue}
-                  color="teal"
-                >
+                  color="teal">
                   {toFixed(supply / 1000) + ' kW'}
                 </ProgressBar>
               </LabeledList.Item>
@@ -92,8 +79,7 @@ export const PowerMonitorContent = (props) => {
                   value={demand}
                   minValue={0}
                   maxValue={maxValue}
-                  color="pink"
-                >
+                  color="pink">
                   {toFixed(demand / 1000) + ' kW'}
                 </ProgressBar>
               </LabeledList.Item>
@@ -209,6 +195,8 @@ export const AreaCharge = (props) => {
   );
 };
 
+AreaCharge.defaultHooks = pureComponentHooks;
+
 const AreaStatusColorBox = (props) => {
   const { status } = props;
   const power = Boolean(status & 2);
@@ -222,3 +210,5 @@ const AreaStatusColorBox = (props) => {
     />
   );
 };
+
+AreaStatusColorBox.defaultHooks = pureComponentHooks;

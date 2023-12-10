@@ -14,7 +14,7 @@ import { setupHotReloading } from 'tgui-dev-server/link/client.cjs';
 import { setupGlobalEvents } from 'tgui/events';
 import { captureExternalLinks } from 'tgui/links';
 import { createRenderer } from 'tgui/renderer';
-import { configureStore } from 'tgui/store';
+import { configureStore, StoreProvider } from 'tgui/store';
 import { audioMiddleware, audioReducer } from './audio';
 import { chatMiddleware, chatReducer } from './chat';
 import { gameMiddleware, gameReducer } from './game';
@@ -51,7 +51,11 @@ const renderApp = createRenderer(() => {
   setGlobalStore(store);
 
   const { Panel } = require('./Panel');
-  return <Panel />;
+  return (
+    <StoreProvider store={store}>
+      <Panel />
+    </StoreProvider>
+  );
 });
 
 const setupApp = () => {
@@ -80,36 +84,33 @@ const setupApp = () => {
   Byond.winset('browseroutput', {
     'is-visible': true,
     'is-disabled': false,
-    pos: '0x0',
-    size: '0x0',
+    'pos': '0x0',
+    'size': '0x0',
   });
 
   // Resize the panel to match the non-browser output
-  Byond.winget('output').then((output: { size: string }) => {
+  Byond.winget('output').then((output) => {
     Byond.winset('browseroutput', {
-      size: output.size,
+      'size': output.size,
     });
   });
 
   // Enable hot module reloading
   if (module.hot) {
     setupHotReloading();
-
-    module.hot.accept(
-      [
-        './audio',
-        './chat',
-        './game',
-        './Notifications',
-        './Panel',
-        './ping',
-        './settings',
-        './telemetry',
-      ],
-      () => {
-        renderApp();
-      },
-    );
+    // prettier-ignore
+    module.hot.accept([
+      './audio',
+      './chat',
+      './game',
+      './Notifications',
+      './Panel',
+      './ping',
+      './settings',
+      './telemetry',
+    ], () => {
+      renderApp();
+    });
   }
 };
 

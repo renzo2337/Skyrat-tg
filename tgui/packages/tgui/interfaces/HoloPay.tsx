@@ -1,18 +1,6 @@
 import { decodeHtmlEntities } from 'common/string';
 import { useBackend, useLocalState } from 'tgui/backend';
-import {
-  Box,
-  Button,
-  Dropdown,
-  Icon,
-  NoticeBox,
-  RestrictedInput,
-  Section,
-  Stack,
-  Table,
-  TextArea,
-  Tooltip,
-} from 'tgui/components';
+import { Box, Button, Dropdown, Icon, NoticeBox, RestrictedInput, Section, Stack, Table, TextArea, Tooltip } from 'tgui/components';
 import { Window } from 'tgui/layouts';
 
 type HoloPayData = {
@@ -42,7 +30,7 @@ export const HoloPay = (props) => {
   };
 
   return (
-    <Window height={300} width={250} title="Holo Pay">
+    <Window height="300" width="250" title="Holo Pay">
       <Window.Content>
         {!owner ? (
           <NoticeBox>Error! Swipe an ID first.</NoticeBox>
@@ -118,8 +106,7 @@ const TerminalDisplay = (props) => {
         )
       }
       fill
-      title="Terminal"
-    >
+      title="Terminal">
       <Stack fill vertical>
         <Stack.Item align="center">
           <Icon color="good" name={shop_logo} size={5} />
@@ -194,15 +181,13 @@ const SetupDisplay = (props) => {
           onClick={() => {
             act('done');
             onClick();
-          }}
-        >
+          }}>
           Done
         </Button>
       }
       fill
       scrollable
-      title="Settings"
-    >
+      title="Settings">
       <Stack fill vertical>
         <Stack.Item>
           <Box bold color="label">

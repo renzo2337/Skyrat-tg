@@ -8,7 +8,7 @@ import { Box, Button, Flex, Section, TextArea } from '../components';
 import { Window } from '../layouts';
 import { sanitizeText } from '../sanitize';
 import { marked } from 'marked';
-import { Component, createRef, RefObject } from 'react';
+import { Component, createRef, RefObject } from 'inferno';
 import { clamp } from 'common/math';
 
 const Z_INDEX_STAMP = 1;
@@ -198,7 +198,7 @@ class PaperSheetStamper extends Component<PaperSheetStamperProps> {
 
     const radians = Math.atan2(
       currentWidth + stampWidth / 2 - e.pageX,
-      currentHeight + stampHeight - e.pageY,
+      currentHeight + stampHeight - e.pageY
     );
 
     const rotate = rotating
@@ -245,14 +245,14 @@ class PaperSheetStamper extends Component<PaperSheetStamperProps> {
 }
 
 // Creates a full stamp div to render the given stamp to the preview.
-export const Stamp = (props) => {
+export const Stamp = (props): InfernoElement<HTMLDivElement> => {
   const { activeStamp, sprite, x, y, rotation, opacity, yOffset = 0 } = props;
   const stamp_transform = {
-    left: x + 'px',
-    top: y + yOffset + 'px',
-    transform: 'rotate(' + rotation + 'deg)',
-    opacity: opacity || 1.0,
-    zIndex: activeStamp ? Z_INDEX_STAMP_PREVIEW : Z_INDEX_STAMP,
+    'left': x + 'px',
+    'top': y + yOffset + 'px',
+    'transform': 'rotate(' + rotation + 'deg)',
+    'opacity': opacity || 1.0,
+    'z-index': activeStamp ? Z_INDEX_STAMP_PREVIEW : Z_INDEX_STAMP,
   };
 
   return (
@@ -311,7 +311,7 @@ export class PrimaryView extends Component {
 
     const [inputFieldData, setInputFieldData] = useLocalState(
       'inputFieldData',
-      {},
+      {}
     );
 
     const [textAreaText, setTextAreaText] = useLocalState('textAreaText', '');
@@ -356,8 +356,7 @@ export class PrimaryView extends Component {
                     <Box
                       inline
                       pr={'5px'}
-                      color={tooManyCharacters ? 'bad' : 'default'}
-                    >
+                      color={tooManyCharacters ? 'bad' : 'default'}>
                       {`${usedCharacters} / ${max_length}`}
                     </Box>
                     <Button.Confirm
@@ -378,8 +377,7 @@ export class PrimaryView extends Component {
                       }}
                     />
                   </>
-                }
-              >
+                }>
                 <TextArea
                   scrollbar
                   noborder
@@ -532,7 +530,7 @@ export class PreviewView extends Component<PreviewViewProps> {
 
     const [inputFieldData, setInputFieldData] = useLocalState(
       'inputFieldData',
-      {},
+      {}
     );
 
     const { data } = useBackend<PaperContext>();
@@ -608,7 +606,7 @@ export class PreviewView extends Component<PreviewViewProps> {
         fontBold,
         fieldCount,
         readOnly,
-        advancedHtml,
+        advancedHtml
       );
 
       output += processingOutput.text;
@@ -654,7 +652,7 @@ export class PreviewView extends Component<PreviewViewProps> {
       paper_color,
       fontBold,
       fieldCount,
-      readOnly,
+      readOnly
     );
 
     this.parsedTextBoxCache = processingOutput.text;
@@ -667,11 +665,11 @@ export class PreviewView extends Component<PreviewViewProps> {
     text: string,
     font: string,
     color: string,
-    bold: boolean = false,
+    bold: boolean = false
   ): string => {
-    return `<span style={{color:${color};font-family:${font};${
+    return `<span style="color:${color};font-family:${font};${
       bold ? 'font-weight: bold;' : ''
-    }}}>${text}</span>`;
+    }">${text}</span>`;
   };
 
   // Parses the given raw text through marked for applying markdown.
@@ -738,7 +736,7 @@ export class PreviewView extends Component<PreviewViewProps> {
     bold: boolean,
     fieldCounter: number = 0,
     forceReadonlyFields: boolean = false,
-    advanced_html: boolean = false,
+    advanced_html: boolean = false
   ): FieldCreationReturn => {
     // First lets make sure it ends in a new line
     const { data } = useBackend<PaperContext>();
@@ -758,7 +756,7 @@ export class PreviewView extends Component<PreviewViewProps> {
       color,
       paperColor,
       forceReadonlyFields,
-      fieldCounter,
+      fieldCounter
     );
 
     // Fifth, we wrap the created text in the writing implement properties.
@@ -794,7 +792,7 @@ export class PreviewView extends Component<PreviewViewProps> {
     color: string,
     paperColor: string,
     forceReadonlyFields: boolean,
-    counter: number = 0,
+    counter: number = 0
   ): FieldCreationReturn => {
     const { data } = useBackend<PaperContext>();
     const { raw_field_input } = data;
@@ -804,7 +802,7 @@ export class PreviewView extends Component<PreviewViewProps> {
       (match, p1, offset, string) => {
         const width = this.textWidth(match, font, fontSize);
         const matchingData = raw_field_input?.find(
-          (e) => e.field_index === `${counter}`,
+          (e) => e.field_index === `${counter}`
         );
         if (matchingData) {
           return this.createFilledInputField(
@@ -815,7 +813,7 @@ export class PreviewView extends Component<PreviewViewProps> {
             fontSize,
             color,
             paperColor,
-            this.createIDHeader(counter++),
+            this.createIDHeader(counter++)
           );
         }
         return this.createInputField(
@@ -825,9 +823,9 @@ export class PreviewView extends Component<PreviewViewProps> {
           fontSize,
           color,
           this.createIDHeader(counter++),
-          forceReadonlyFields,
+          forceReadonlyFields
         );
-      },
+      }
     );
 
     return {
@@ -844,7 +842,7 @@ export class PreviewView extends Component<PreviewViewProps> {
     fontSize: number,
     color: string,
     id: string,
-    readOnly: boolean,
+    readOnly: boolean
   ): string => {
     // This are fields that may potentially be fillable, so we'll use the
     // currently held item's stats for them if possible.
@@ -903,7 +901,7 @@ export class PreviewView extends Component<PreviewViewProps> {
     fontSize: number,
     color: string,
     paperColor: string,
-    id: string,
+    id: string
   ): string => {
     const { data } = useBackend<PaperContext>();
     const { max_input_field_length } = data;
@@ -941,12 +939,12 @@ export class PreviewView extends Component<PreviewViewProps> {
 
     if (interactMode === InteractionType.writing) {
       previewText += this.createPreviewFromTextArea(
-        dmTextPreviewData.newFieldCount,
+        dmTextPreviewData.newFieldCount
       );
     }
 
     const textHTML = {
-      __html: `<span className='paper-text'>${previewText}</span>`,
+      __html: `<span class='paper-text'>${previewText}</span>`,
     };
 
     const { scrollableRef, handleOnScroll } = this.props;
@@ -957,8 +955,7 @@ export class PreviewView extends Component<PreviewViewProps> {
         fitted
         scrollable
         scrollableRef={scrollableRef}
-        onScroll={handleOnScroll}
-      >
+        onScroll={handleOnScroll}>
         <Box
           fillPositionedParent
           position="relative"
@@ -1010,7 +1007,7 @@ export const PaperSheet = (props) => {
   if (!writeMode) {
     const [inputFieldData, setInputFieldData] = useLocalState(
       'inputFieldData',
-      {},
+      {}
     );
     if (Object.keys(inputFieldData).length) {
       setInputFieldData({});
@@ -1022,8 +1019,7 @@ export const PaperSheet = (props) => {
       title={paper_name}
       theme="paper"
       width={420}
-      height={500 + (writeMode ? TEXTAREA_INPUT_HEIGHT : 0)}
-    >
+      height={500 + (writeMode ? TEXTAREA_INPUT_HEIGHT : 0)}>
       <Window.Content backgroundColor={paper_color}>
         <PrimaryView />
       </Window.Content>

@@ -1,11 +1,4 @@
-import {
-  Collapsible,
-  LabeledList,
-  NoticeBox,
-  Section,
-  Stack,
-  Tooltip,
-} from 'tgui/components';
+import { Collapsible, LabeledList, NoticeBox, Section, Stack, Tooltip } from 'tgui/components';
 import { getColor } from './helpers';
 import { Threshold } from './types';
 
@@ -56,7 +49,7 @@ const Thresholds = (props) => {
           {convertedThresholds.map(([label, descr], index) => {
             return (
               <LabeledList.Item key={index} label={label}>
-                {String(descr)}
+                {descr}
               </LabeledList.Item>
             );
           })}

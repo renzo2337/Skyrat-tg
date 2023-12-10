@@ -5,34 +5,11 @@
  */
 
 import { canRender, classes } from 'common/react';
-import { PropsWithChildren, ReactNode } from 'react';
-import { BoxProps, computeBoxClassName, computeBoxProps } from './Box';
+import { computeBoxClassName, computeBoxProps } from './Box';
 import { Icon } from './Icon';
 
-type Props = Partial<{
-  className: string;
-  fill: boolean;
-  fluid: boolean;
-  vertical: boolean;
-}> &
-  BoxProps &
-  PropsWithChildren;
-
-type TabProps = Partial<{
-  className: string;
-  color: string;
-  icon: string;
-  leftSlot: ReactNode;
-  onClick: (e?) => void;
-  rightSlot: ReactNode;
-  selected: boolean;
-}> &
-  BoxProps &
-  PropsWithChildren;
-
-export const Tabs = (props: Props) => {
+export const Tabs = (props) => {
   const { className, vertical, fill, fluid, children, ...rest } = props;
-
   return (
     <div
       className={classes([
@@ -43,14 +20,13 @@ export const Tabs = (props: Props) => {
         className,
         computeBoxClassName(rest),
       ])}
-      {...computeBoxProps(rest)}
-    >
+      {...computeBoxProps(rest)}>
       {children}
     </div>
   );
 };
 
-const Tab = (props: TabProps) => {
+const Tab = (props) => {
   const {
     className,
     selected,
@@ -61,7 +37,6 @@ const Tab = (props: TabProps) => {
     children,
     ...rest
   } = props;
-
   return (
     <div
       className={classes([
@@ -70,10 +45,9 @@ const Tab = (props: TabProps) => {
         'Tab--color--' + color,
         selected && 'Tab--selected',
         className,
-        computeBoxClassName(rest),
+        ...computeBoxClassName(rest),
       ])}
-      {...computeBoxProps(rest)}
-    >
+      {...computeBoxProps(rest)}>
       {(canRender(leftSlot) && <div className="Tab__left">{leftSlot}</div>) ||
         (!!icon && (
           <div className="Tab__left">

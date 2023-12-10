@@ -440,7 +440,6 @@
 	extra_access = list(
 		ACCESS_PSYCHOLOGY,
 		ACCESS_PHARMACY,
-		ACCESS_VIROLOGY,
 	)
 	template_access = list(
 		ACCESS_CAPTAIN,
@@ -696,6 +695,7 @@
 	sechud_icon_state = SECHUD_MEDICAL_DOCTOR
 	extra_access = list(
 		ACCESS_PLUMBING,
+		ACCESS_VIROLOGY,
 		)
 	minimal_access = list(
 		ACCESS_MECH_MEDICAL,
@@ -704,7 +704,6 @@
 		ACCESS_MORGUE,
 		ACCESS_PHARMACY,
 		ACCESS_SURGERY,
-		ACCESS_VIROLOGY,
 		)
 	template_access = list(
 		ACCESS_CAPTAIN,
@@ -755,7 +754,6 @@
 		)
 	extra_access = list(
 		ACCESS_SURGERY,
-		ACCESS_VIROLOGY,
 		)
 	template_access = list(
 		ACCESS_CAPTAIN,
@@ -1170,7 +1168,6 @@
 		ACCESS_MEDICAL,
 		ACCESS_MINERAL_STOREROOM,
 		ACCESS_VIROLOGY,
-		ACCESS_PHARMACY,
 		)
 	extra_access = list(
 		ACCESS_PLUMBING,

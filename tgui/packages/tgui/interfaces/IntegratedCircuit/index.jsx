@@ -1,16 +1,10 @@
 import { useBackend } from '../../backend';
 import { Input, InfinitePlane, Stack, Box, Button } from '../../components';
-import { Component } from 'react';
+import { Component } from 'inferno';
 import { Window } from '../../layouts';
 import { resolveAsset } from '../../assets';
 import { CircuitInfo } from './CircuitInfo';
-import {
-  ABSOLUTE_Y_OFFSET,
-  MOUSE_BUTTON_LEFT,
-  TIME_UNTIL_PORT_RELEASE_WORKS,
-  VARIABLE_ASSOC_LIST,
-  VARIABLE_LIST,
-} from './constants';
+import { ABSOLUTE_Y_OFFSET, MOUSE_BUTTON_LEFT, TIME_UNTIL_PORT_RELEASE_WORKS, VARIABLE_ASSOC_LIST, VARIABLE_LIST } from './constants';
 import { Connections } from '../common/Connections';
 import { ObjectComponent } from './ObjectComponent';
 import { DisplayComponent } from './DisplayComponent';
@@ -18,8 +12,8 @@ import { VariableMenu } from './VariableMenu';
 import { ComponentMenu } from './ComponentMenu';
 
 export class IntegratedCircuit extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       locations: {},
       selectedPort: null,
@@ -508,13 +502,11 @@ export class IntegratedCircuit extends Component {
               )}
             </Stack>
           </Box>
-        }
-      >
+        }>
         <Window.Content
           style={{
-            backgroundImage: 'none',
-          }}
-        >
+            'background-image': 'none',
+          }}>
           <InfinitePlane
             width="100%"
             height="100%"
@@ -523,8 +515,7 @@ export class IntegratedCircuit extends Component {
             onZoomChange={this.handleZoomChange}
             onBackgroundMoved={this.handleBackgroundMoved}
             initialLeft={screen_x}
-            initialTop={screen_y}
-          >
+            initialTop={screen_y}>
             {components.map(
               (comp, index) =>
                 comp && (
@@ -539,7 +530,7 @@ export class IntegratedCircuit extends Component {
                     onPortMouseUp={this.handlePortUp}
                     act={act}
                   />
-                ),
+                )
             )}
             {!!draggingComponent && (
               <DisplayComponent
@@ -574,12 +565,11 @@ export class IntegratedCircuit extends Component {
               minWidth="600px"
               width="50%"
               style={{
-                borderRadius: '0px 32px 0px 0px',
-                backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                'border-radius': '0px 32px 0px 0px',
+                'background-color': 'rgba(0, 0, 0, 0.3)',
                 '-ms-user-select': 'none',
               }}
-              unselectable="on"
-            >
+              unselectable="on">
               <VariableMenu
                 variables={variables}
                 types={global_basic_types}
@@ -600,7 +590,7 @@ export class IntegratedCircuit extends Component {
                 handleMouseDownSetter={this.onVarClickedSetter}
                 handleMouseDownGetter={this.onVarClickedGetter}
                 style={{
-                  borderRadius: '0px 32px 0px 0px',
+                  'border-radius': '0px 32px 0px 0px',
                 }}
               />
             </Box>
@@ -613,11 +603,10 @@ export class IntegratedCircuit extends Component {
               height="100%"
               width="300px"
               style={{
-                backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                'background-color': 'rgba(0, 0, 0, 0.3)',
                 '-ms-user-select': 'none',
               }}
-              unselectable="on"
-            >
+              unselectable="on">
               <ComponentMenu
                 components={
                   (stored_designs && Object.keys(stored_designs)) || []

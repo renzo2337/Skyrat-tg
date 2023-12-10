@@ -44,11 +44,10 @@ export const Connections = (props: {
       width="100%"
       height="100%"
       style={{
-        position: 'absolute',
-        pointerEvents: 'none',
-        zIndex: zLayer,
-      }}
-    >
+        'position': 'absolute',
+        'pointer-events': 'none',
+        'z-index': zLayer,
+      }}>
       {connections.map((val, index) => {
         const from = val.from;
         const to = val.to;

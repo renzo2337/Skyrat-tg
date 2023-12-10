@@ -1,11 +1,11 @@
 import { Button, Stack, Box } from '../../components';
-import { Component, createRef } from 'react';
+import { Component, createRef } from 'inferno';
 import { Port } from './Port';
 import { noop } from './constants';
 
 export class DisplayComponent extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.ref = createRef();
   }
 
@@ -45,8 +45,7 @@ export class DisplayComponent extends Component {
             backgroundColor={component.color || 'blue'}
             py={1}
             px={1}
-            className="ObjectComponent__Titlebar"
-          >
+            className="ObjectComponent__Titlebar">
             <Stack>
               <Stack.Item grow={1} unselectable="on">
                 {component.name}
@@ -66,8 +65,7 @@ export class DisplayComponent extends Component {
             className="ObjectComponent__Content"
             unselectable="on"
             py={1}
-            px={1}
-          >
+            px={1}>
             <Stack>
               <Stack.Item grow={fixedSize}>
                 <Stack vertical fill>

@@ -145,17 +145,10 @@ GLOBAL_LIST_EMPTY_TYPED(air_alarms, /obj/machinery/airalarm)
 	GLOB.air_alarms -= src
 	return ..()
 
-/obj/machinery/airalarm/proc/check_enviroment()
+/obj/machinery/airalarm/power_change()
 	var/turf/our_turf = connected_sensor ? get_turf(connected_sensor) : get_turf(src)
 	var/datum/gas_mixture/environment = our_turf.return_air()
 	check_danger(our_turf, environment, environment.temperature)
-
-/obj/machinery/airalarm/proc/get_enviroment()
-	var/turf/our_turf = connected_sensor ? get_turf(connected_sensor) : get_turf(src)
-	return our_turf.return_air()
-
-/obj/machinery/airalarm/power_change()
-	check_enviroment()
 	return ..()
 
 /obj/machinery/airalarm/on_enter_area(datum/source, area/area_to_register)
@@ -239,7 +232,8 @@ GLOBAL_LIST_EMPTY_TYPED(air_alarms, /obj/machinery/airalarm)
 	data["sensor"] = !!connected_sensor
 	data["allowLinkChange"] = allow_link_change
 
-	var/datum/gas_mixture/environment = get_enviroment()
+	var/turf/turf = connected_sensor ? get_turf(connected_sensor) : get_turf(src)
+	var/datum/gas_mixture/environment = turf.return_air()
 	var/total_moles = environment.total_moles()
 	var/temp = environment.temperature
 	var/pressure = environment.return_pressure()
@@ -467,7 +461,9 @@ GLOBAL_LIST_EMPTY_TYPED(air_alarms, /obj/machinery/airalarm)
 			tlv.set_value(threshold_type, value)
 			investigate_log("threshold value for [threshold]:[threshold_type] was set to [value] by [key_name(usr)]", INVESTIGATE_ATMOS)
 
-			check_enviroment()
+			var/turf/our_turf = connected_sensor ? get_turf(connected_sensor) : get_turf(src)
+			var/datum/gas_mixture/environment = our_turf.return_air()
+			check_danger(our_turf, environment, environment.temperature)
 
 		if("reset_threshold")
 			var/threshold = text2path(params["threshold"]) || params["threshold"]
@@ -478,7 +474,9 @@ GLOBAL_LIST_EMPTY_TYPED(air_alarms, /obj/machinery/airalarm)
 			tlv.reset_value(threshold_type)
 			investigate_log("threshold value for [threshold]:[threshold_type] was reset by [key_name(usr)]", INVESTIGATE_ATMOS)
 
-			check_enviroment()
+			var/turf/our_turf = connected_sensor ? get_turf(connected_sensor) : get_turf(src)
+			var/datum/gas_mixture/environment = our_turf.return_air()
+			check_danger(our_turf, environment, environment.temperature)
 
 		if ("alarm")
 			if (alarm_manager.send_alarm(ALARM_ATMOS))
@@ -701,7 +699,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 	RegisterSignal(connected_sensor, COMSIG_QDELETING, PROC_REF(disconnect_sensor))
 	my_area = get_area(connected_sensor)
 
-	check_enviroment()
+	var/turf/our_turf = get_turf(connected_sensor)
+	var/datum/gas_mixture/environment = our_turf.return_air()
+	check_danger(our_turf, environment, environment.temperature)
 
 	update_appearance()
 	update_name()
@@ -712,7 +712,9 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/airalarm, 27)
 	connected_sensor = null
 	my_area = get_area(src)
 
-	check_enviroment()
+	var/turf/our_turf = get_turf(src)
+	var/datum/gas_mixture/environment = our_turf.return_air()
+	check_danger(our_turf, environment, environment.temperature)
 
 	update_appearance()
 	update_name()

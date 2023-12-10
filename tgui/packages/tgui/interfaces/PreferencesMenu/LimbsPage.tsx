@@ -1,12 +1,5 @@
 // THIS IS A SKYRAT UI FILE
-import {
-  Box,
-  Stack,
-  Section,
-  Dropdown,
-  Button,
-  ColorBox,
-} from '../../components';
+import { Box, Stack, Section, Dropdown, Button, ColorBox } from '../../components';
 import { useBackend } from '../../backend';
 import { PreferencesMenuData } from './data';
 import { CharacterPreview } from '../common/CharacterPreview';
@@ -63,8 +56,7 @@ export const Markings = (props) => {
                     limb_slot: props.limb.slot,
                     marking_id: marking.marking_id,
                   })
-                }
-              >
+                }>
                 <ColorBox color={marking.color} />
               </Button>
             </Stack.Item>
@@ -79,8 +71,7 @@ export const Markings = (props) => {
                     marking_id: marking.marking_id,
                     emissive: marking.emissive,
                   })
-                }
-              >
+                }>
                 E
               </Button>
             </Stack.Item>
@@ -93,8 +84,7 @@ export const Markings = (props) => {
                     limb_slot: props.limb.slot,
                     marking_id: marking.marking_id,
                   })
-                }
-              >
+                }>
                 -
               </Button>
             </Stack.Item>
@@ -105,8 +95,7 @@ export const Markings = (props) => {
         <Button
           fill
           color="good"
-          onClick={() => act('add_marking', { limb_slot: props.limb.slot })}
-        >
+          onClick={() => act('add_marking', { limb_slot: props.limb.slot })}>
           +
         </Button>
       </Stack.Item>
@@ -135,7 +124,7 @@ export const AugmentationPage = (props) => {
   let balance = -data.quirks_balance;
   if (props.limb.can_augment) {
     return (
-      <div style={{ marginBottom: '1.5em' }}>
+      <div style={{ 'margin-bottom': '1.5em' }}>
         <Section fill title={props.limb.name}>
           <Stack fill vertical>
             <Stack.Item>
@@ -254,9 +243,8 @@ export const LimbsPage = (props) => {
           <RotateCharacterButtons />
           <Box
             style={{
-              marginTop: '3em',
-            }}
-          >
+              'margin-top': '3em',
+            }}>
             <Section title="Quirk Points Balance" />
           </Box>
 
@@ -267,10 +255,9 @@ export const LimbsPage = (props) => {
             fontSize="1.2em"
             py={0.5}
             style={{
-              width: '20%',
-              alignItems: 'center',
-            }}
-          >
+              'width': '20%',
+              'align-items': 'center',
+            }}>
             {balance}
           </Box>
         </Section>

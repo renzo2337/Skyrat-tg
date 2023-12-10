@@ -14,18 +14,21 @@ import { PingIndicator } from './ping';
 import { ReconnectButton } from './reconnect';
 import { SettingsPanel, useSettings } from './settings';
 
-export const Panel = (props) => {
-  const audio = useAudio();
-  const settings = useSettings();
-  const game = useGame();
+export const Panel = (props, context) => {
+  // IE8-10: Needs special treatment due to missing Flex support
+  if (Byond.IS_LTE_IE10) {
+    return <HoboPanel />;
+  }
+  const audio = useAudio(context);
+  const settings = useSettings(context);
+  const game = useGame(context);
   if (process.env.NODE_ENV !== 'production') {
     const { useDebug, KitchenSink } = require('tgui/debug');
-    const debug = useDebug();
+    const debug = useDebug(context);
     if (debug.kitchenSink) {
       return <KitchenSink panel />;
     }
   }
-
   return (
     <Pane theme={settings.theme}>
       <Stack fill vertical>
@@ -96,6 +99,30 @@ export const Panel = (props) => {
           </Section>
         </Stack.Item>
       </Stack>
+    </Pane>
+  );
+};
+
+const HoboPanel = (props, context) => {
+  const settings = useSettings(context);
+  return (
+    <Pane theme={settings.theme}>
+      <Pane.Content scrollable>
+        <Button
+          style={{
+            position: 'fixed',
+            top: '1em',
+            right: '2em',
+            'z-index': 1000,
+          }}
+          selected={settings.visible}
+          onClick={() => settings.toggle()}>
+          Settings
+        </Button>
+        {(settings.visible && <SettingsPanel />) || (
+          <ChatPanel lineHeight={settings.lineHeight} />
+        )}
+      </Pane.Content>
     </Pane>
   );
 };
