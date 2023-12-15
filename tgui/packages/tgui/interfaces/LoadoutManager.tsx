@@ -1,16 +1,40 @@
 // THIS IS A SKYRAT UI FILE
-import { useBackend, useSharedState } from '../backend';
+import { useState } from 'react';
+import { useBackend } from '../backend';
 import { Box, Button, Section, Stack, Dropdown } from '../components';
+import { BooleanLike } from 'common/react';
 import { Window } from '../layouts';
 
+type LoadoutTabData = {
+  loadout_tabs: LoadoutTab[];
+  selected_loadout: string[];
+  user_is_donator: BooleanLike;
+};
+
+type LoadoutTab = {
+  name: string;
+  title: string;
+  contents: LoadoutTabItem[];
+};
+
+type LoadoutTabItem = {
+  name: string;
+  path: string;
+  is_greyscale: BooleanLike;
+  is_renameable: BooleanLike;
+  is_job_restricted: BooleanLike;
+  is_job_blacklisted: BooleanLike;
+  is_species_restricted: BooleanLike;
+  is_donator_only: BooleanLike;
+  is_ckey_whitelisted: BooleanLike;
+  tooltip_text: string;
+};
+
 export const LoadoutManager = (props) => {
-  const { act, data } = useBackend();
+  const { act, data } = useBackend<LoadoutTabData>();
   const { selected_loadout, loadout_tabs, user_is_donator } = data;
 
-  const [selectedTabName, setSelectedTab] = useSharedState(
-    'tabs',
-    loadout_tabs[0]?.name
-  );
+  const [selectedTabName, setSelectedTab] = useState(loadout_tabs[0]?.name);
   const selectedTab = loadout_tabs.find((curTab) => {
     return curTab.name === selectedTabName;
   });
@@ -30,7 +54,8 @@ export const LoadoutManager = (props) => {
                   content="Tutorial"
                   onClick={() => act('toggle_tutorial')}
                 />
-              }>
+              }
+            >
               <Button
                 icon="check-double"
                 color="good"
@@ -41,12 +66,8 @@ export const LoadoutManager = (props) => {
               <Dropdown
                 width="100%"
                 selected={selectedTabName}
-                displayText={selectedTabName}
-                options={loadout_tabs.map((curTab) => ({
-                  value: curTab,
-                  displayText: curTab.name,
-                }))}
-                onSelected={(curTab) => setSelectedTab(curTab.name)}
+                options={loadout_tabs.map((curTab) => curTab.name)}
+                onSelected={(curTab) => setSelectedTab(curTab)}
               />
             </Section>
           </Stack.Item>
@@ -68,7 +89,8 @@ export const LoadoutManager = (props) => {
                         width={10}
                         onClick={() => act('clear_all_items')}
                       />
-                    }>
+                    }
+                  >
                     <Stack grow vertical>
                       {selectedTab.contents.map((item) => (
                         <Stack.Item key={item.name}>
@@ -88,7 +110,7 @@ export const LoadoutManager = (props) => {
                                 />
                               </Stack.Item>
                             )}
-                            {!!item.is_renamable && (
+                            {!!item.is_renameable && (
                               <Stack.Item>
                                 <Button
                                   icon="pen"
@@ -173,7 +195,7 @@ export const LoadoutManager = (props) => {
                                   act('select_item', {
                                     path: item.path,
                                     deselect: selected_loadout.includes(
-                                      item.path
+                                      item.path,
                                     ),
                                   })
                                 }

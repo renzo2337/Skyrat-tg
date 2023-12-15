@@ -3,7 +3,6 @@ import { Box, Button, Flex, LabeledList, NoticeBox, Section, Stack, Tabs } from 
 import { Window } from '../layouts';
 
 export const DopplerArray = (props) => {
-  const { act, data } = useBackend();
   return (
     <Window width={650} height={320} resizable>
       <Window.Content>
