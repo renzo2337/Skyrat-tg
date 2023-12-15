@@ -9,7 +9,18 @@ import { decodeHtmlEntities } from 'common/string';
 import { useBackend, useSharedState } from '../backend';
 import { BountyBoardContent } from './BountyBoard';
 import { UserDetails } from './Vending';
-import { BlockQuote, Box, Button, Divider, LabeledList, Modal, Section, Stack, Tabs, TextArea } from '../components';
+import {
+  BlockQuote,
+  Box,
+  Button,
+  Divider,
+  LabeledList,
+  Modal,
+  Section,
+  Stack,
+  Tabs,
+  TextArea,
+} from '../components';
 import { marked } from 'marked';
 import { sanitizeText } from '../sanitize';
 import { useState } from 'react';
@@ -24,7 +35,7 @@ export const Newscaster = (props) => {
   const BOUNTYBOARD_SCREEN = 2;
   const [screenmode, setScreenmode] = useSharedState(
     'tab_main',
-    NEWSCASTER_SCREEN
+    NEWSCASTER_SCREEN,
   );
 
   return (
@@ -38,13 +49,15 @@ export const Newscaster = (props) => {
             <Tabs.Tab
               color="Green"
               selected={screenmode === NEWSCASTER_SCREEN}
-              onClick={() => setScreenmode(NEWSCASTER_SCREEN)}>
+              onClick={() => setScreenmode(NEWSCASTER_SCREEN)}
+            >
               Newscaster
             </Tabs.Tab>
             <Tabs.Tab
               Color="Blue"
               selected={screenmode === BOUNTYBOARD_SCREEN}
-              onClick={() => setScreenmode(BOUNTYBOARD_SCREEN)}>
+              onClick={() => setScreenmode(BOUNTYBOARD_SCREEN)}
+            >
               Bounty Board
             </Tabs.Tab>
           </Tabs>
@@ -94,7 +107,8 @@ const NewscasterChannelCreation = (props) => {
                 act('setChannelName', {
                   channeltext: name,
                 })
-              }>
+              }
+            >
               Channel Name
             </TextArea>
           </Stack.Item>
@@ -111,7 +125,8 @@ const NewscasterChannelCreation = (props) => {
                 act('setChannelDesc', {
                   channeldesc: desc,
                 })
-              }>
+              }
+            >
               Channel Description
             </TextArea>
           </Stack.Item>
@@ -183,7 +198,8 @@ const NewscasterCommentCreation = (props) => {
               act('setCommentBody', {
                 commenttext: comment,
               })
-            }>
+            }
+          >
             Channel Name
           </TextArea>
         </Stack.Item>
@@ -440,7 +456,8 @@ const NewscasterChannelSelector = (props) => {
             key={activeWanted.index}
             icon={activeWanted.active ? 'skull-crossbones' : null}
             textColor={activeWanted.active ? 'red' : 'grey'}
-            onClick={() => act('toggleWanted')}>
+            onClick={() => act('toggleWanted')}
+          >
             Wanted Issue
           </Tabs.Tab>
         ))}
@@ -457,7 +474,8 @@ const NewscasterChannelSelector = (props) => {
               act('setChannel', {
                 channel: channel.ID,
               })
-            }>
+            }
+          >
             {channel.name}
           </Tabs.Tab>
         ))}
@@ -467,7 +485,8 @@ const NewscasterChannelSelector = (props) => {
           mr={1}
           textColor="white"
           color="Green"
-          onClick={() => act('startCreateChannel')}>
+          onClick={() => act('startCreateChannel')}
+        >
           Create Channel [+]
         </Tabs.Tab>
       </Tabs>
@@ -483,7 +502,7 @@ const processedText = (value) => {
         smartypants: true,
         smartLists: true,
         baseUrl: 'thisshouldbreakhttp',
-      })
+      }),
     ),
   };
   return textHtml;
@@ -511,7 +530,7 @@ const NewscasterChannelMessages = (props) => {
     );
   }
   const visibleMessages = messages.filter(
-    (message) => message.ID !== viewing_channel
+    (message) => message.ID !== viewing_channel,
   );
   return (
     <Section>
@@ -575,7 +594,8 @@ const NewscasterChannelMessages = (props) => {
                   }
                 />
               </>
-            }>
+            }
+          >
             <BlockQuote>
               {message.censored_message ? (
                 <Section textColor="red">
