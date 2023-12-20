@@ -22,7 +22,7 @@
 	subcategory = "Replika repair supplies"
 
 /datum/armament_entry/company_import/sierpinski/repair/kit
-	name = "Replika repair suplies kit"
+	name = "Replika repair supplies kit"
 	item_type = /obj/item/storage/medkit/sierpinski
 	cost = PAYCHECK_COMMAND * 10
 
