@@ -30,7 +30,12 @@
 	item_path =/obj/item/storage/backpack/satchel/tipos/aba_rcomm
 	restricted_roles = list(JOB_HEAD_OF_PERSONNEL, JOB_CAPTAIN, JOB_HEAD_OF_SECURITY, JOB_RESEARCH_DIRECTOR, JOB_CHIEF_ENGINEER, JOB_CHIEF_MEDICAL_OFFICER)
 
+/datum/loadout_item/inhand/flag_eusan
+	name = "Folded Eusan Nation Flag"
+	item_path = /obj/item/sign/flag/eusan
+
 // Los Tipos - Custom Loadout limbussy stuff
+
 /datum/loadout_item/mask/dantuh
 	name = "Dante's Head"
 	item_path =/obj/item/clothing/mask/dantuh

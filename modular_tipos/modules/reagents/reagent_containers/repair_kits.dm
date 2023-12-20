@@ -16,6 +16,15 @@
 	. = ..()
 	label_text = span_notice("There is a sticker pasted onto the side which reads, 'WARNING: Synthetic use only, do not use on organic beings.")
 
+/obj/item/reagent_containers/hypospray/medipen/sierpinski/patch
+	name = "repair patch"
+	desc = "A sealed, single-use adhesive patch containing a coagulation agent to patch up damaged areas. Restores a small amount of health over time when applied."
+	base_icon_state = "rep_patch"
+	inhand_icon_state = "rep_patch"
+	amount_per_transfer_from_this = 15
+	volume = 15
+	list_reagents = list(/datum/reagent/medicine/nanite_slurry/sierpinski = 15)
+
 /obj/item/reagent_containers/hypospray/medipen/sierpinski/spray
 	name = "repair spray"
 	desc = "A single-use spray gun to fill damaged areas with polyurethane-based expanding foam. Restores a large amount of health over time."
@@ -43,8 +52,8 @@
 	volume = 45
 	list_reagents = list(/datum/reagent/medicine/nanite_slurry/sierpinski = 45)
 
-// Sierpinski Repair Patches
-
+// Sierpinski Repair Patches - NO FUNCIONA
+/*
 /obj/item/stack/medical/sierpinski/patch
 	name = "repair patches"
 	desc = "A sealed, single-use adhesive patch containing a coagulation agent to patch up damaged areas. Restores a small amount of health over time when applied."
@@ -54,8 +63,8 @@
 	righthand_file = 'modular_tipos/modules/reagents/reagent_containers/repair_kits_righthand.dmi'
 	lefthand_file = 'modular_tipos/modules/reagents/reagent_containers/repair_kits_lefthand.dmi'
 	icon_state = "rep_patch"
-	self_delay = 10 SECONDS
-	other_delay = 5 SECONDS
+	self_delay = 5 SECONDS
+	other_delay = 2 SECONDS
 	amount = 10
 	max_amount = 10
 
@@ -86,6 +95,7 @@
 		return
 	else
 		return ..()
+*/
 
 // Replika Repair kit container
 
@@ -102,11 +112,11 @@
 	. = ..()
 	atom_storage.max_total_storage = 14
 	atom_storage.max_slots = 7
-	atom_storage.can_hold = typecacheof(list(/obj/item/reagent_containers/hypospray/medipen/sierpinski, /obj/item/stack/medical/sierpinski/patch))
+	atom_storage.can_hold = typecacheof(list(/obj/item/reagent_containers/hypospray/medipen/sierpinski))
 
 /obj/item/storage/medkit/sierpinski/PopulateContents()
 	generate_items_inside(list(
-		/obj/item/stack/medical/sierpinski/patch = 2,
+		/obj/item/reagent_containers/hypospray/medipen/sierpinski/patch = 2,
 		/obj/item/reagent_containers/hypospray/medipen/sierpinski/spray = 2,
 		/obj/item/reagent_containers/hypospray/medipen/sierpinski/spray_plus = 2,
 		/obj/item/reagent_containers/hypospray/medipen/sierpinski/autoinjector = 1,
