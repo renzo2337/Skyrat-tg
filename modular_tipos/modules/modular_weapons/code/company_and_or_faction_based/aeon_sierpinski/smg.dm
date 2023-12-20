@@ -59,6 +59,11 @@
 	caliber = CALIBER_S8MM
 	projectile_type = /obj/projectile/bullet/s8mm
 
+/obj/item/ammo_casing/s8mm/Initialize(mapload)
+	. = ..()
+
+	AddElement(/datum/element/caseless)
+
 /obj/projectile/bullet/s8mm
 	name = "8x22mm bullet"
 	damage = 15
