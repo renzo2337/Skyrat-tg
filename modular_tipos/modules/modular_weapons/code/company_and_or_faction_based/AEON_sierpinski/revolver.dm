@@ -3,13 +3,15 @@
 /obj/item/gun/ballistic/revolver/sierpinski
 	name = "\improper Eu-K508 S 'Einhorn' Revolver"
 	desc = "A short-barreled double-action 6-shot revolver that fires 12x40mm ammo. High recoil, strong knockback."
-
+	icon_state = "einhorn"
+	inhand_icon_state = "einhorn"
 	icon = 'modular_tipos/modules/modular_weapons/icons/obj/company_and_or_faction_based/aeon_sierpinski/sig_handguns.dmi'
-	icon_state = "sig_rev"
+	righthand_file = 'modular_tipos/modules/modular_weapons/icons/obj/company_and_or_faction_based/aeon_sierpinski/sig_onmob_righthand.dmi'
+	lefthand_file = 'modular_tipos/modules/modular_weapons/icons/obj/company_and_or_faction_based/aeon_sierpinski/sig_onmob_lefthand.dmi'
 	fire_sound = 'modular_tipos/modules/modular_weapons/sounds/signalis_revolver.ogg'
-
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/cylinder/s12mm
-
 	w_class = WEIGHT_CLASS_SMALL
 	can_suppress = FALSE
 	recoil = 1
@@ -26,7 +28,7 @@
 
 	return .
 
-/// 12x40mm revolver caliber
+/// 12x40mm Eu-K508 S 'Einhorn' Revolver caliber
 
 #define CALIBER_S12MM "12x40mm Short"
 

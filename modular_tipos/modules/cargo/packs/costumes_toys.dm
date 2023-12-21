@@ -65,7 +65,6 @@
 		/obj/item/toy/figure/manaos/slimy = 1,
 		/obj/item/toy/figure/manaos/wh = 1,
 		/obj/item/toy/figure/manaos/aleph = 1,
-		/obj/item/toy/figure/manaos/area = 1,
 		/obj/item/toy/figure/manaos/vlad = 1,
 		/obj/item/toy/figure/manaos/franco = 1,
 		/obj/item/toy/figure/manaos/sam = 1

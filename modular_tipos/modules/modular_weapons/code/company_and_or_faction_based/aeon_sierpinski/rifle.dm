@@ -3,9 +3,9 @@
 /obj/item/gun/ballistic/rifle/sierpinski
 	name = "BW-5 Nitro Express Rifle"
 	desc = "A large-bore double-barreled hunting rifle. The recoil feels strong enough to break your shoulder."
-	icon_state = "sig_rif"
-	inhand_icon_state = "sig_rif"
-	worn_icon_state = "sig_rif"
+	icon_state = "nitro"
+	inhand_icon_state = "nitro"
+	worn_icon_state = "nitro"
 	icon = 'modular_tipos/modules/modular_weapons/icons/obj/company_and_or_faction_based/aeon_sierpinski/sig_guns.dmi'
 	righthand_file = 'modular_tipos/modules/modular_weapons/icons/obj/company_and_or_faction_based/aeon_sierpinski/sig_onmob_righthand.dmi'
 	lefthand_file = 'modular_tipos/modules/modular_weapons/icons/obj/company_and_or_faction_based/aeon_sierpinski/sig_onmob_lefthand.dmi'
@@ -45,7 +45,7 @@
 
 #define CALIBER_S16MM "16x80mm Armor-Piercing"
 
-// BW-5 Nitro Express Rifle Ammo
+// 16x80mm BW-5 Nitro Express Rifle Ammo
 
 /obj/item/ammo_casing/s16mm
 	name = "16x80mm armor-piercing cartridge"

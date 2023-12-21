@@ -8037,8 +8037,11 @@
 #include "modular_tipos\master_files\code\game\objects\items\clothing.dm"
 #include "modular_tipos\master_files\code\game\objects\items\toys.dm"
 #include "modular_tipos\master_files\code\game\objects\items\storage\backpack.dm"
+#include "modular_tipos\modules\aesthetics\flag\code\signs_flags.dm"
 #include "modular_tipos\modules\altborgs\code\robot_modules.dm"
 #include "modular_tipos\modules\cargo\packs\costumes_toys.dm"
+#include "modular_tipos\modules\cargo\packs\medical.dm"
+#include "modular_tipos\modules\cargo\packs\security.dm"
 #include "modular_tipos\modules\clothing\suits\armor.dm"
 #include "modular_tipos\modules\company_imports\code\armament_datums\aeon_equipment.dm"
 #include "modular_tipos\modules\customization\modules\mob\dead\new_player\sprite_accesories\ears.dm"
@@ -8047,5 +8050,6 @@
 #include "modular_tipos\modules\mob\living\simple_animal\pet\lethal_event.dm"
 #include "modular_tipos\modules\modular_weapons\code\company_and_or_faction_based\aeon_sierpinski\revolver.dm"
 #include "modular_tipos\modules\modular_weapons\code\company_and_or_faction_based\aeon_sierpinski\rifle.dm"
+#include "modular_tipos\modules\modular_weapons\code\company_and_or_faction_based\aeon_sierpinski\smg.dm"
 #include "modular_tipos\modules\reagents\reagent_containers\repair_kits.dm"
 // END_INCLUDE
