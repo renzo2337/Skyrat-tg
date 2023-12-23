@@ -8052,4 +8052,5 @@
 #include "modular_tipos\modules\modular_weapons\code\company_and_or_faction_based\AEON_sierpinski\rifle.dm"
 #include "modular_tipos\modules\modular_weapons\code\company_and_or_faction_based\AEON_sierpinski\smg.dm"
 #include "modular_tipos\modules\reagents\reagent_containers\repair_kits.dm"
+#include "modular_tipos\modules\mob\living\simple_animal\pet\boar.dm"
 // END_INCLUDE
