@@ -253,6 +253,7 @@
 		/obj/item/toy/plush/beeplushie,
 		/obj/item/toy/plush/moth,
 		/obj/item/toy/plush/pkplush,
+		/obj/item/toy/plush/boar_plush
 	)
 
 /obj/effect/spawner/random/entertainment/plushie_delux
