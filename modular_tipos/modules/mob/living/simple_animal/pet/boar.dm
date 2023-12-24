@@ -10,4 +10,3 @@
 	butcher_results = list(
 		/obj/item/food/meat/slab = 6
 	)
-
