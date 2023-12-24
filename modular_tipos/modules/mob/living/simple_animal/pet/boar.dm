@@ -9,6 +9,6 @@
 	gold_core_spawneable = TRUE
 	butcher_results = list(
 		mob/living/carbon/human/monkey = 1
-		obj/item/food/meat = 6,
+		obj/item/food/meat = 6
 	)
 
