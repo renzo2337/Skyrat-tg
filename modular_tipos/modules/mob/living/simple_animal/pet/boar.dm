@@ -6,9 +6,8 @@
 	icon_living = "boar"
 	icon_dead = "boar_dead"
 	speak_emote = list("roars", "grunts")
-	gold_core_spawneable = FRIENDLY_SPAWN
+	gold_core_spawnable = FRIENDLY_SPAWN
 	butcher_results = list(
-		/mob/living/carbon/human/monkey = 1,
 		/obj/item/food/meat = 6
 	)
 
