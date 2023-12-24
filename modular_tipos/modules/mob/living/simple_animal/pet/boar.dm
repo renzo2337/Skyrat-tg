@@ -8,7 +8,7 @@
 	speak_emote = list("roars", "grunts")
 	gold_core_spawneable = TRUE
 	butcher_results = list(
-		mob/living/carbon/human/monkey = 1
+		mob/living/carbon/human/monkey = 1,
 		obj/item/food/meat = 6
 	)
 
