@@ -787,11 +787,3 @@
 	attack_verb_continuous = list("gnaws", "gnashes", "chews")
 	attack_verb_simple = list("gnaw", "gnash", "chew")
 
-/obj/item/toy/plush/boar_plush
-	name = "Boar-luche anti estres"
-	desc = "boar como va"
-	icon = 'icons/obj/toys/plushes.dmi'
-	icon_state = "boar"
-	inhand_icon_state = "boar"
-	attack_verb_continuous = list("decimates", "chomps", "gnaws")
-	attack_verb_simple = list("chomp", "gnaw", "rips")
