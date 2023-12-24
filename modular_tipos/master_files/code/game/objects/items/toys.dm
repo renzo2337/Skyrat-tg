@@ -326,3 +326,13 @@
 	attack_verb_continuous = "hits"
 	attack_verb_simple = "hit"
 	squeak_override = list('modular_tipos/master_files/sound/effects/jade_sound.ogg' = 1)
+
+/obj/item/toy/plush/tipos/boar_plush
+	name = "Boarluche cientifico"
+	desc = "un peluche de un BOAR con su traje cientifico! (no acercar a los niños, puede contener residuos radioactivos)"
+	icon = 'modular_tipos/master_files/icons/obj/toys/toy.dmi'
+	icon_state = "p_boar"
+	inhand_icon_state = "p_boar"
+	attack_verb_continuous = list("decimates", "chomps", "gnaws", "investigates")
+	attack_verb_simple = list("chomp", "gnaw", "rips", "examines")
+
