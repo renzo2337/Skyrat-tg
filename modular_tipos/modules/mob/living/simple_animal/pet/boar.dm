@@ -8,6 +8,6 @@
 	speak_emote = list("roars", "grunts")
 	gold_core_spawnable = FRIENDLY_SPAWN
 	butcher_results = list(
-		/obj/item/food/meat = 6
+		/obj/item/food/meat/slab = 6
 	)
 
