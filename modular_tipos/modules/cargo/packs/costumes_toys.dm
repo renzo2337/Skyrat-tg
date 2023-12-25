@@ -78,10 +78,10 @@
 	desc = "Contiene una variedad de peluches de edicion limitada de Los Tipos"
 	cost = CARGO_CRATE_VALUE * 5
 	contains = list(
-		/obj/item/toy/plush/tipos/boarluches/sec_boar = 1,
-		/obj/item/toy/plush/tipos/boarluches/sci_boar = 1,
-		/obj/item/toy/plush/tipos/boarluches/ing_boar = 1,
-		/obj/item/toy/plush/tipos/boarluches/rd_boar = 1,
+		/obj/item/toy/plush/tipos/sec_boar = 1,
+		/obj/item/toy/plush/tipos/sci_boar = 1,
+		/obj/item/toy/plush/tipos/ing_boar = 1,
+		/obj/item/toy/plush/tipos/rd_boar = 1,
 		/obj/item/toy/plush/tipos/jade = 1
 		)
 	crate_name = "Caja de peluches corporativos"
