@@ -328,7 +328,7 @@
 	attack_verb_simple = "hit"
 	squeak_override = list('modular_tipos/master_files/sound/effects/jade_sound.ogg' = 1)
 
-/obj/item/toy/plush/tipos/boarluches/sci_boar
+/obj/item/toy/plush/tipos/sci_boar
 	name = "Boarluche cientifico"
 	desc = "un peluche de un BOAR con su traje cientifico! (no acercar a los niños, puede contener residuos radioactivos)"
 	icon_state = "sci_boar"
@@ -336,21 +336,21 @@
 	attack_verb_continuous = list("examines", "investigates", "researchs")
 	attack_verb_simple = list("investigate", "examine", "research")
 
-/obj/item/toy/plush/tipos/boarluches/ing_boar
+/obj/item/toy/plush/tipos/ing_boar
 	name = "Boaluche ingeniero"
 	desc = "Un peluche de un BOAR con su modsuit de ingeniero!! (la corporacion no se hace responsable por delaminaciones de la SM)"
 	icon_state = "ing_boar"
 	attack_verb_continuous = list("delaminates", "mauls", "chomps")
 	attack_verb_simple = list("delaminate", "maul", "chomp")
 
-/obj/item/toy/plush/tipos/boarluches/sec_boar
+/obj/item/toy/plush/tipos/sec_boar
 	name = "Boaluche segurata"
 	desc = "Un peluche de un BOAR con su equipo de segurata!! (la corporacion no aceptara quejas por abuso policial ni delitos de odio que el BOARLUCHE pueda cometer)"
 	icon_state = "sec_boar"
 	attack_verb_continuous = list("batters", "stuns")
 	attack_verb_simple = list("batter", "stun")
 
-/obj/item/toy/plush/tipos/boarluches/rd_boar
+/obj/item/toy/plush/tipos/rd_boar
 	name = "Boarluche director de investigacion"
 	desc = "Un peluche de un BOAR con su atuendo de RD!! (la corporacion no se responsabiliza de abuso de autoridad cometido por el peluche)"
 	icon_state = "rd_boar"
