@@ -36,7 +36,8 @@
 		/obj/item/toy/figure/tipos/connor = 1,
 		/obj/item/toy/figure/tipos/blue = 1,
 		/obj/item/toy/figure/tipos/white = 1,
-		/obj/item/toy/figure/tipos/yellow = 1
+		/obj/item/toy/figure/tipos/yellow = 1,
+
 	)
 	crate_name = "caja de figuras"
 	crate_type = /obj/structure/closet/crate/wooden
@@ -71,3 +72,17 @@
 	)
 	crate_name = "caja de figuras descontinuadas"
 	crate_type = /obj/structure/closet/crate/wooden
+
+/datum/supply_pack/costumes_toys/manaos
+	name = "Caja de peluches corporativos"
+	desc = "Contiene una variedad de peluches de edicion limitada de Los Tipos"
+	cost = CARGO_CRATE_VALUE * 5
+	contains = list(
+		/obj/item/toy/plush/tipos/sec_boar = 1,
+		/obj/item/toy/plush/tipos/sci_boar = 1,
+		/obj/item/toy/plush/tipos/ing_boar = 1,
+		/obj/item/toy/plush/tipos/rd_boar = 1,
+		/obj/item/toy/plush/tipos/jade = 1
+		)
+	crate_name = "Caja de peluches corporativos"
+	crate_type = /obj/structure/closet/crate/centcom
