@@ -36,7 +36,11 @@
 		/obj/item/toy/figure/tipos/connor = 1,
 		/obj/item/toy/figure/tipos/blue = 1,
 		/obj/item/toy/figure/tipos/white = 1,
-		/obj/item/toy/figure/tipos/yellow = 1
+		/obj/item/toy/figure/tipos/yellow = 1,
+		/obj/item/toy/plush/tipos/boarluches/sec_boar = 1,
+		/obj/item/toy/plush/tipos/boarluches/sci_boar = 1,
+		/obj/item/toy/plush/tipos/boarluches/ing_boar = 1,
+		/obj/item/toy/plush/tipos/boarluches/rd_boar = 1
 	)
 	crate_name = "caja de figuras"
 	crate_type = /obj/structure/closet/crate/wooden
